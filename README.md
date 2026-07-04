@@ -7,7 +7,7 @@
 - 🌱 I’m currently learning Docker and Micro services  
   
 
-- ❓ Ask me about anything related to .NET,Anguler stack and related technologies  
+- ❓ Ask me about anything related to .NET, Anguler stack and related technologies  
   
 
 <br/>  
