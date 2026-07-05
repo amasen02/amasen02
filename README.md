@@ -17,6 +17,16 @@ designs autonomous agents that ship systems by night.
 
 ---
 
+### `$ sudo cat /classified/systems.log`
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg?v=3" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
+
+</div>
+
+---
+
 ### `$ cat capabilities.log`
 
 ```
@@ -102,16 +112,6 @@ Each FreshCart service gets the architecture its own requirements call for — n
 ### `$ cat roadmap.log`
 
 - 🧪 **Up next:** a self-improving personal agent runtime — exploring the Hermes Agent / OpenClaw class of self-improving, learning-loop agent frameworks as a base to build on.
-
----
-
-### `$ sudo cat /classified/systems.log`
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg?v=3" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
-
-</div>
 
 ---
 
