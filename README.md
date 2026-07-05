@@ -91,6 +91,12 @@ Every repo above ships with real tests, CI (lint/build/test), branch protection,
 
 Each FreshCart service gets the architecture its own requirements call for — not one pattern copy-pasted twelve times. Ordering earns DDD + a saga because it holds the richest invariants; Basket gets Redis + outbox because it's transient, high-throughput state; Payment gets event sourcing because compliance demands an immutable audit trail. That's a deliberate per-service decision, documented and enforced in the repo's own engineering standards.
 
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-patterns.svg" alt="Design principles and patterns applied across FreshCart" width="100%" />
+
+</div>
+
 ### `$ cat roadmap.log`
 
 - 🧪 **Up next:** a self-improving personal agent runtime — exploring the Hermes Agent / OpenClaw class of self-improving, learning-loop agent frameworks as a base to build on.
