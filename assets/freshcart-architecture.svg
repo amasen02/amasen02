@@ -1,5 +1,5 @@
-<svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
-  <title>FreshCart: 12 independently-architected microservices and their live CI/CD pipeline</title>
+<svg width="900" height="350" viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
+  <title>FreshCart: 12 independently-architected microservices behind an API gateway, and their live CI/CD pipeline</title>
   <defs>
     <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -10,113 +10,179 @@
     </marker>
   </defs>
 
-  <rect width="900" height="320" rx="14" fill="url(#bg3)"/>
-  <rect x="1" y="1" width="898" height="318" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+  <rect width="900" height="350" rx="14" fill="url(#bg3)"/>
+  <rect x="1" y="1" width="898" height="348" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>
 
-  <text x="25" y="26" font-family="monospace" font-size="12.5" fill="#39ff88" font-weight="bold">FRESHCART — 12 services, 12 deliberate architectures (no copy-paste structure)</text>
+  <text x="25" y="20" font-family="monospace" font-size="11.5" fill="#39ff88" font-weight="bold">FRESHCART — 12 services, 12 deliberate architectures (no copy-paste structure)</text>
 
-  <!-- service grid: name + chosen pattern, each card scans in sequence -->
+  <!-- API gateway backbone -->
+  <g transform="translate(300,26)" font-family="monospace" font-size="10.5">
+    <rect width="300" height="24" rx="12" fill="#0f2417" stroke="#39ff88" stroke-width="1.3">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="150" y="16" text-anchor="middle" fill="#39ff88">API GATEWAY — YARP</text>
+  </g>
+
+  <!-- topology backbone: trunk + per-row branch combs, drawn behind the cards -->
+  <g stroke="#2a3f33" stroke-width="1.3" fill="none">
+    <line x1="450" y1="50" x2="450" y2="190"/>
+    <line x1="127" y1="64" x2="773" y2="64"/>
+    <line x1="127" y1="124" x2="773" y2="124"/>
+    <line x1="127" y1="184" x2="773" y2="184"/>
+    <line x1="127" y1="64" x2="127" y2="70"/>
+    <line x1="342" y1="64" x2="342" y2="70"/>
+    <line x1="557" y1="64" x2="557" y2="70"/>
+    <line x1="772" y1="64" x2="772" y2="70"/>
+    <line x1="127" y1="124" x2="127" y2="130"/>
+    <line x1="342" y1="124" x2="342" y2="130"/>
+    <line x1="557" y1="124" x2="557" y2="130"/>
+    <line x1="772" y1="124" x2="772" y2="130"/>
+    <line x1="127" y1="184" x2="127" y2="190"/>
+    <line x1="342" y1="184" x2="342" y2="190"/>
+    <line x1="557" y1="184" x2="557" y2="190"/>
+    <line x1="772" y1="184" x2="772" y2="190"/>
+  </g>
+  <circle cx="450" cy="64" r="2.5" fill="#39ff88"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/></circle>
+  <circle cx="450" cy="124" r="2.5" fill="#39ff88"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" begin="0.7s" repeatCount="indefinite"/></circle>
+  <circle cx="450" cy="184" r="2.5" fill="#39ff88"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" begin="1.4s" repeatCount="indefinite"/></circle>
+
+  <!-- service grid: color-coded by underlying tech family -->
   <g font-family="monospace">
     <!-- row 1 -->
-    <g transform="translate(25,36)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="0.0s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Identity</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Clean Architecture + ASP.NET Identity</text>
+    <g transform="translate(25,70)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#4da6ff" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="0.0s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#4da6ff"/>
+      <circle cx="193" cy="12" r="4" fill="#4da6ff"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Identity</text>
+      <text x="14" y="36" font-size="8.5" fill="#4da6ff">Clean Architecture + ASP.NET Identity</text>
     </g>
-    <g transform="translate(240,36)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="0.4s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Catalog</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Vertical Slice + Carter/MediatR + Marten</text>
+    <g transform="translate(240,70)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#2dd4bf" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="0.4s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#2dd4bf"/>
+      <circle cx="193" cy="12" r="4" fill="#2dd4bf"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Catalog</text>
+      <text x="14" y="36" font-size="8.5" fill="#2dd4bf">Vertical Slice + Carter/MediatR + Marten</text>
     </g>
-    <g transform="translate(455,36)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="0.8s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Pricing</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Simple services + gRPC hot path</text>
+    <g transform="translate(455,70)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#fbbf24" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="0.8s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#fbbf24"/>
+      <circle cx="193" cy="12" r="4" fill="#fbbf24"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Pricing</text>
+      <text x="14" y="36" font-size="8.5" fill="#fbbf24">Simple services + gRPC hot path</text>
     </g>
-    <g transform="translate(670,36)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="1.2s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Basket</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Vertical Slice + Redis HybridCache + Outbox</text>
+    <g transform="translate(670,70)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#fb923c" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="1.2s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#fb923c"/>
+      <circle cx="193" cy="12" r="4" fill="#fb923c"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Basket</text>
+      <text x="14" y="36" font-size="8.5" fill="#fb923c">Vertical Slice + Redis HybridCache + Outbox</text>
     </g>
     <!-- row 2 -->
-    <g transform="translate(25,96)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="1.6s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Ordering</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Clean Arch + DDD + MassTransit Saga</text>
+    <g transform="translate(25,130)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#4da6ff" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="1.6s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#4da6ff"/>
+      <circle cx="193" cy="12" r="4" fill="#4da6ff"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Ordering</text>
+      <text x="14" y="36" font-size="8.5" fill="#4da6ff">Clean Arch + DDD + MassTransit Saga</text>
     </g>
-    <g transform="translate(240,96)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="2.0s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Inventory</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Layered: Repository + Unit of Work + Dapper</text>
+    <g transform="translate(240,130)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#4da6ff" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="2.0s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#4da6ff"/>
+      <circle cx="193" cy="12" r="4" fill="#4da6ff"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Inventory</text>
+      <text x="14" y="36" font-size="8.5" fill="#4da6ff">Layered: Repository + Unit of Work + Dapper</text>
     </g>
-    <g transform="translate(455,96)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="2.4s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Payment</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Clean Arch + Event Sourcing (MongoDB)</text>
+    <g transform="translate(455,130)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#c084fc" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="2.4s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#c084fc"/>
+      <circle cx="193" cy="12" r="4" fill="#c084fc"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Payment</text>
+      <text x="14" y="36" font-size="8.5" fill="#c084fc">Clean Arch + Event Sourcing (MongoDB)</text>
     </g>
-    <g transform="translate(670,96)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="2.8s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Delivery</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Hexagonal (Ports &amp; Adapters) + MongoDB</text>
+    <g transform="translate(670,130)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#c084fc" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="2.8s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#c084fc"/>
+      <circle cx="193" cy="12" r="4" fill="#c084fc"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Delivery</text>
+      <text x="14" y="36" font-size="8.5" fill="#c084fc">Hexagonal (Ports &amp; Adapters) + MongoDB</text>
     </g>
     <!-- row 3 -->
-    <g transform="translate(25,156)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="3.2s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Notification</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Consumers + SignalR fan-out hub</text>
+    <g transform="translate(25,190)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#f472b6" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="3.2s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#f472b6"/>
+      <circle cx="193" cy="12" r="4" fill="#f472b6"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Notification</text>
+      <text x="14" y="36" font-size="8.5" fill="#f472b6">Consumers + SignalR fan-out hub</text>
     </g>
-    <g transform="translate(240,156)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="3.6s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">CustomerSupport</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Connection manager + SignalR + Repository</text>
+    <g transform="translate(240,190)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#f472b6" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="3.6s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#f472b6"/>
+      <circle cx="193" cy="12" r="4" fill="#f472b6"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">CustomerSupport</text>
+      <text x="14" y="36" font-size="8.5" fill="#f472b6">Connection manager + SignalR + Repository</text>
     </g>
-    <g transform="translate(455,156)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="4.0s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Reviews</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">Vertical Slice + MongoDB, eventual consistency</text>
+    <g transform="translate(455,190)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#c084fc" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="4.0s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#c084fc"/>
+      <circle cx="193" cy="12" r="4" fill="#c084fc"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Reviews</text>
+      <text x="14" y="36" font-size="8.5" fill="#c084fc">Vertical Slice + MongoDB, eventual consistency</text>
     </g>
-    <g transform="translate(670,156)">
-      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#39ff88" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="4.8s" begin="4.4s" repeatCount="indefinite"/></rect>
-      <text x="10" y="20" font-size="11" fill="#e6edf3">Reporting</text>
-      <text x="10" y="36" font-size="8.5" fill="#39ff88">CQRS read model + Dapper + MySQL</text>
+    <g transform="translate(670,190)">
+      <rect width="205" height="50" rx="6" fill="#0f1420" stroke="#a3e635" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="4.8s" begin="4.4s" repeatCount="indefinite"/></rect>
+      <rect width="4" height="50" rx="2" fill="#a3e635"/>
+      <circle cx="193" cy="12" r="4" fill="#a3e635"/>
+      <text x="14" y="20" font-size="11" fill="#e6edf3">Reporting</text>
+      <text x="14" y="36" font-size="8.5" fill="#a3e635">CQRS read model + Dapper + MySQL</text>
     </g>
   </g>
 
-  <text x="25" y="232" font-family="monospace" font-size="12.5" fill="#39ff88" font-weight="bold">CI/CD — per service, every merge (Trivy + Cosign live; SonarCloud wired, pending token)</text>
+  <!-- family legend -->
+  <g font-family="monospace" font-size="8.5" fill="#8ab">
+    <circle cx="30" cy="252" r="3.5" fill="#4da6ff"/><text x="38" y="255">SQL/EF+Dapper</text>
+    <circle cx="140" cy="252" r="3.5" fill="#2dd4bf"/><text x="148" y="255">Postgres/Marten</text>
+    <circle cx="255" cy="252" r="3.5" fill="#fb923c"/><text x="263" y="255">Redis</text>
+    <circle cx="310" cy="252" r="3.5" fill="#c084fc"/><text x="318" y="255">MongoDB</text>
+    <circle cx="390" cy="252" r="3.5" fill="#f472b6"/><text x="398" y="255">SignalR</text>
+    <circle cx="450" cy="252" r="3.5" fill="#a3e635"/><text x="458" y="255">MySQL</text>
+    <circle cx="505" cy="252" r="3.5" fill="#fbbf24"/><text x="513" y="255">gRPC</text>
+  </g>
+
+  <text x="25" y="278" font-family="monospace" font-size="12.5" fill="#39ff88" font-weight="bold">CI/CD — per service, every merge (Trivy + Cosign live; SonarCloud wired, pending token)</text>
 
   <!-- pipeline: stages light up in sequence, packets travel the arrows -->
   <g font-family="monospace" font-size="9">
-    <g transform="translate(25,244)">
+    <g transform="translate(25,290)">
       <rect width="100" height="34" rx="5" fill="#0f2417" stroke="#39ff88"><animate attributeName="fill" values="#0f2417;#154a2c;#0f2417" dur="7.2s" begin="0.0s" repeatCount="indefinite"/></rect>
       <text x="14" y="21" fill="#39ff88">Restore</text>
     </g>
-    <g transform="translate(133,244)">
+    <g transform="translate(133,290)">
       <rect width="100" height="34" rx="5" fill="#0f2417" stroke="#39ff88"><animate attributeName="fill" values="#0f2417;#154a2c;#0f2417" dur="7.2s" begin="0.5s" repeatCount="indefinite"/></rect>
       <text x="22" y="21" fill="#39ff88">Build</text>
     </g>
-    <g transform="translate(241,244)">
+    <g transform="translate(241,290)">
       <rect width="100" height="34" rx="5" fill="#0f2417" stroke="#39ff88"><animate attributeName="fill" values="#0f2417;#154a2c;#0f2417" dur="7.2s" begin="1.0s" repeatCount="indefinite"/></rect>
       <text x="26" y="21" fill="#39ff88">Test</text>
     </g>
-    <g transform="translate(349,244)">
+    <g transform="translate(349,290)">
       <rect width="100" height="34" rx="5" fill="#0f2417" stroke="#39ff88"><animate attributeName="fill" values="#0f2417;#154a2c;#0f2417" dur="7.2s" begin="1.5s" repeatCount="indefinite"/></rect>
       <text x="6" y="21" fill="#39ff88">CodeQL SAST</text>
     </g>
-    <g transform="translate(457,244)">
+    <g transform="translate(457,290)">
       <rect width="100" height="34" rx="5" fill="#0f2417" stroke="#39ff88"><animate attributeName="fill" values="#0f2417;#154a2c;#0f2417" dur="7.2s" begin="2.0s" repeatCount="indefinite"/></rect>
       <text x="5" y="21" fill="#39ff88">E2E Playwright</text>
     </g>
-    <g transform="translate(565,244)">
+    <g transform="translate(565,290)">
       <rect width="100" height="34" rx="5" fill="#0f2417" stroke="#39ff88"><animate attributeName="fill" values="#0f2417;#154a2c;#0f2417" dur="7.2s" begin="2.5s" repeatCount="indefinite"/></rect>
       <text x="20" y="21" fill="#39ff88">Trivy</text>
     </g>
-    <g transform="translate(673,244)">
+    <g transform="translate(673,290)">
       <rect width="100" height="34" rx="5" fill="#0f2417" stroke="#39ff88"><animate attributeName="fill" values="#0f2417;#154a2c;#0f2417" dur="7.2s" begin="3.0s" repeatCount="indefinite"/></rect>
       <text x="10" y="21" fill="#39ff88">Cosign sign</text>
     </g>
 
     <!-- pending: wired, not yet green -->
-    <g transform="translate(781,244)" opacity="0.9">
+    <g transform="translate(781,290)" opacity="0.9">
       <rect width="100" height="34" rx="5" fill="none" stroke="#ffb454" stroke-dasharray="4 3"/>
       <text x="6" y="15" fill="#ffb454">SonarCloud</text>
       <text x="10" y="27" fill="#ffb454" font-size="7.5">(pending token)</text>
@@ -124,21 +190,21 @@
 
     <!-- traveling packets along the pipeline -->
     <g fill="#e6edf3">
-      <circle r="2.8"><animateMotion dur="7.2s" begin="0.0s" repeatCount="indefinite" path="M30,261 L881,261"/></circle>
-      <circle r="2.8" opacity="0.6"><animateMotion dur="7.2s" begin="2.4s" repeatCount="indefinite" path="M30,261 L881,261"/></circle>
+      <circle r="2.8"><animateMotion dur="7.2s" begin="0.0s" repeatCount="indefinite" path="M30,307 L881,307"/></circle>
+      <circle r="2.8" opacity="0.6"><animateMotion dur="7.2s" begin="2.4s" repeatCount="indefinite" path="M30,307 L881,307"/></circle>
     </g>
 
     <!-- connective arrows -->
     <g stroke="#39ff88" stroke-width="1.1" fill="none" opacity="0.8">
-      <path d="M125 261 L132 261" marker-end="url(#arrow)"/>
-      <path d="M233 261 L240 261" marker-end="url(#arrow)"/>
-      <path d="M341 261 L348 261" marker-end="url(#arrow)"/>
-      <path d="M449 261 L456 261" marker-end="url(#arrow)"/>
-      <path d="M557 261 L564 261" marker-end="url(#arrow)"/>
-      <path d="M665 261 L672 261" marker-end="url(#arrow)"/>
-      <path d="M773 261 L780 261" marker-end="url(#arrow)"/>
+      <path d="M125 307 L132 307" marker-end="url(#arrow)"/>
+      <path d="M233 307 L240 307" marker-end="url(#arrow)"/>
+      <path d="M341 307 L348 307" marker-end="url(#arrow)"/>
+      <path d="M449 307 L456 307" marker-end="url(#arrow)"/>
+      <path d="M557 307 L564 307" marker-end="url(#arrow)"/>
+      <path d="M665 307 L672 307" marker-end="url(#arrow)"/>
+      <path d="M773 307 L780 307" marker-end="url(#arrow)"/>
     </g>
   </g>
 
-  <text x="25" y="300" font-family="monospace" font-size="9.5" fill="#8ab" opacity="0.85">merge is blocked until build + test + SAST + E2E + Trivy are green — Cosign signs every image on master, keyless (Sigstore OIDC)</text>
+  <text x="25" y="337" font-family="monospace" font-size="9.5" fill="#8ab" opacity="0.85">merge is blocked until build + test + SAST + E2E + Trivy are green — Cosign signs every image on master, keyless (Sigstore OIDC)</text>
 </svg>
