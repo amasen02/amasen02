@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg" alt="hooded developer at a glowing terminal" width="100%" />
+
 ```
 $ whoami
 ama_senevirathne — senior software engineer / tech lead
@@ -80,8 +82,12 @@ Every repo above ships with real tests, CI (lint/build/test), branch protection,
 ![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
 ![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake.svg#gh-light-mode-only)
 
-<img src="https://github-readme-stats.vercel.app/api?username=amasen02&show_icons=true&theme=dracula&hide_border=true&count_private=true" alt="GitHub stats" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=amasen02&layout=compact&theme=dracula&hide_border=true" alt="Top languages" height="165" />
+<br/>
+
+<img src="https://img.shields.io/github/followers/amasen02?style=for-the-badge&logo=github&label=followers&color=39ff88&logoColor=white" alt="followers" />
+<img src="https://img.shields.io/github/stars/amasen02/freshcart-backend?style=for-the-badge&logo=github&color=39ff88&logoColor=white&label=freshcart%20stars" alt="freshcart stars" />
+<img src="https://img.shields.io/github/stars/amasen02/fastdl?style=for-the-badge&logo=github&color=39ff88&logoColor=white&label=fastdl%20stars" alt="fastdl stars" />
+<img src="https://img.shields.io/github/stars/amasen02/credscan?style=for-the-badge&logo=github&color=39ff88&logoColor=white&label=credscan%20stars" alt="credscan stars" />
 
 </div>
 
@@ -90,20 +96,21 @@ Every repo above ships with real tests, CI (lint/build/test), branch protection,
 ### Stack
 
 <div align="center">
-<a href="https://dotnet.microsoft.com/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/dot-net-original-wordmark.svg" alt=".NET" height="45" /></a>
-<a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/csharp-original.svg" alt="C#" height="45" /></a>
-<a href="https://angular.io/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/angularjs-original.svg" alt="Angular" height="45" /></a>
-<a href="https://nextjs.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/nextjs-original.svg" alt="Next.js" height="45" /></a>
-<a href="https://nodejs.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/nodejs-original-wordmark.svg" alt="Node.js" height="45" /></a>
-<a href="https://www.typescriptlang.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/typescript-original.svg" alt="TypeScript" height="45" /></a>
-<a href="https://www.python.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python" height="45" /></a>
-<a href="https://flutter.dev/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/flutter-original.svg" alt="Flutter" height="45" /></a>
-<a href="https://kotlinlang.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/kotlin-original.svg" alt="Kotlin" height="45" /></a>
-<a href="https://www.postgresql.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL" height="45" /></a>
-<a href="https://www.docker.com/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker" height="45" /></a>
-<a href="https://kubernetes.io/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/kubernetes-icon.svg" alt="Kubernetes" height="45" /></a>
-<a href="https://www.rabbitmq.com/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/rabbitmq-icon.svg" alt="RabbitMQ" height="45" /></a>
-<a href="https://azure.microsoft.com/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/microsoft_azure-icon.svg" alt="Azure" height="45" /></a>
+<img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" />
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white" alt="C#" />
+<img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+<br/>
+<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
+<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+<img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" />
+<img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ" />
+<img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure" />
 </div>
 
 ---
