@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg?v=3" alt="hooded developer at a glowing terminal" width="100%" />
 
-### Most profiles show what someone built. This one shows what someone taught to keep building without them.
+### Most engineers write code that works. This one builds systems — and the AI agents that extend them — precise enough to still be right at 3am, unsupervised.
 
 ```
 $ whoami
