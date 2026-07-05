@@ -1,20 +1,64 @@
 <div align="center">
 
-# Hi, I'm Ama Senevirathne 👋
+```
+$ whoami
+ama_senevirathne — senior software engineer / tech lead
 
-**Full-stack engineer** building production-grade backends, distributed systems, and developer tools — primarily in **.NET / C#**, **Angular**, **Node.js**, **Next.js**, and **Python**.
+$ cat mission.log
+ships production systems by day.
+designs autonomous agents that ship systems by night.
+```
 
 </div>
 
 ---
 
-### What I'm building right now
+### `$ cat capabilities.log`
+
+```
+[architecture]    .NET/C# · Angular · Node.js · Next.js · Python
+                  microservices · DDD · CQRS · event-driven design
+                  SOLID / KISS / DRY / YAGNI enforced, not aspired to
+
+[security]        OWASP ASVS L2 by default on every service
+                  secrets scanning across source, git history, AI-agent
+                  configs (built credscan to prove it)
+                  DevSecOps: dependency + image scanning, signed builds,
+                  branch-protected CI on every repo
+
+[agentic systems] multi-agent orchestration, RAG-backed decision loops,
+                  tool-use pipelines, prompt engineering, MCP-based
+                  tool integration — designed and operate a production
+                  autonomous multi-agent delivery system (Verawright,
+                  see below) plus a private long-running autonomous
+                  AI system with 24/7 evaluation loops and self-
+                  correction from real outcomes
+
+[mobile]          Flutter + native Android (Kotlin platform channels) —
+                  built a hands-free, wake-word-driven Sinhala voice
+                  assistant with accessibility-service device control
+                  and an LLM-backed NLU fallback chain
+
+[devops]          Docker · Kubernetes · GitHub Actions · Terraform
+                  observability: OpenTelemetry → Prometheus/Grafana/Loki
+
+[practice]        leads architecture + delivery decisions across
+                  services; treats code review as a first-class skill,
+                  not an afterthought
+
+[status]          decrypting further modules...
+```
+
+---
+
+### `$ ls ~/projects`
 
 - 🛒 **[FreshCart](https://github.com/amasen02/freshcart-backend)** — a .NET 10 + Aspire microservices e-commerce reference platform (catalog, cart, orders, identity), paired with an [Angular 20 zoneless/signal-based storefront](https://github.com/amasen02/freshcart-web).
-- 🧰 A growing set of open-source developer tools, each solving one real problem well — see below.
+- 🗣️ **Sahayaka (සහායක)** — a hands-free Sinhala voice assistant for Android: wake-word detection, always-listening overlay service, accessibility-service-driven device control (WiFi/BT/calls/SMS/camera), and a layered NLU pipeline (pattern matching → LLM fallback) — built for elderly and visually-impaired users who need voice-first phone control.
 - 🤖 **Verawright** — an autonomous multi-agent software delivery system I designed and operate: specialized AI agents carry projects through the full lifecycle (research, build, QA, security review, release) under real engineering gates — CI, code review, branch protection — before anything ships.
+- 🧰 A growing set of open-source developer tools, each solving one real problem well — see below.
 
-### Featured projects
+### Featured public repos
 
 | Project | What it does |
 |---|---|
@@ -27,6 +71,22 @@
 
 Every repo above ships with real tests, CI (lint/build/test), branch protection, Docker support, and a full open-source community-health profile (license, contributing guide, security policy, issue/PR templates) — not just a working demo.
 
+---
+
+### `$ tail -f contributions.log`
+
+<div align="center">
+
+![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
+![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake.svg#gh-light-mode-only)
+
+<img src="https://github-readme-stats.vercel.app/api?username=amasen02&show_icons=true&theme=dracula&hide_border=true&count_private=true" alt="GitHub stats" height="165" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=amasen02&layout=compact&theme=dracula&hide_border=true" alt="Top languages" height="165" />
+
+</div>
+
+---
+
 ### Stack
 
 <div align="center">
@@ -37,6 +97,8 @@ Every repo above ships with real tests, CI (lint/build/test), branch protection,
 <a href="https://nodejs.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/nodejs-original-wordmark.svg" alt="Node.js" height="45" /></a>
 <a href="https://www.typescriptlang.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/typescript-original.svg" alt="TypeScript" height="45" /></a>
 <a href="https://www.python.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python" height="45" /></a>
+<a href="https://flutter.dev/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/flutter-original.svg" alt="Flutter" height="45" /></a>
+<a href="https://kotlinlang.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/kotlin-original.svg" alt="Kotlin" height="45" /></a>
 <a href="https://www.postgresql.org/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL" height="45" /></a>
 <a href="https://www.docker.com/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker" height="45" /></a>
 <a href="https://kubernetes.io/" target="_blank"><img src="https://profilinator.rishav.dev/skills-assets/kubernetes-icon.svg" alt="Kubernetes" height="45" /></a>
