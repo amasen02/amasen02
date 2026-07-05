@@ -87,7 +87,7 @@ Every repo above ships with real tests, CI (lint/build/test), branch protection,
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg?v=3" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg?v=4" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
 
 </div>
 
