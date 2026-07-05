@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg" alt="hooded developer at a glowing terminal" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg?v=3" alt="hooded developer at a glowing terminal" width="100%" />
 
 ```
 $ whoami
@@ -85,7 +85,7 @@ Every repo above ships with real tests, CI (lint/build/test), branch protection,
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg?v=3" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
 
 </div>
 
@@ -93,7 +93,7 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-patterns.svg" alt="Design principles and patterns applied across FreshCart" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-patterns.svg?v=3" alt="Design principles and patterns applied across FreshCart" width="100%" />
 
 </div>
 
@@ -107,7 +107,7 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg?v=3" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
 
 </div>
 
