@@ -47,6 +47,30 @@
     <path d="M 20 90 L 260 90 L 280 110 L 0 110 Z" fill="#111826" stroke="#233047" stroke-width="2"/>
   </g>
 
+  <!-- agentic-systems network radiating from the terminal -->
+  <g stroke="#39ff88" stroke-width="1" fill="none" opacity="0.55">
+    <path d="M 440 115 L 610 45" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" values="0;-14" dur="1.4s" repeatCount="indefinite"/></path>
+    <path d="M 440 115 L 690 95" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" values="0;-14" dur="1.7s" repeatCount="indefinite"/></path>
+    <path d="M 440 115 L 705 165" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" values="0;-14" dur="1.3s" repeatCount="indefinite"/></path>
+    <path d="M 440 115 L 645 210" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" values="0;-14" dur="1.6s" repeatCount="indefinite"/></path>
+    <path d="M 440 115 L 540 230" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" values="0;-14" dur="1.9s" repeatCount="indefinite"/></path>
+  </g>
+  <g font-family="monospace" font-size="10.5" fill="#39ff88">
+    <circle cx="610" cy="45" r="3.5" fill="#39ff88"/>
+    <text x="618" y="48">RAG store</text>
+    <circle cx="690" cy="95" r="3.5" fill="#39ff88"/>
+    <text x="698" y="98">ReAct loop</text>
+    <circle cx="705" cy="165" r="3.5" fill="#39ff88"/>
+    <text x="713" y="168">MCP tools</text>
+    <circle cx="645" cy="210" r="3.5" fill="#39ff88"/>
+    <text x="653" y="213">prompt eng</text>
+    <circle cx="540" cy="230" r="3.5" fill="#39ff88"/>
+    <text x="548" y="233">multi-agent</text>
+    <g opacity="0.6">
+      <animate attributeName="opacity" values="0.35;0.85;0.35" dur="2.4s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
   <!-- hooded figure -->
   <g transform="translate(150,60)">
     <!-- body / hoodie -->

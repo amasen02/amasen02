@@ -28,21 +28,29 @@ designs autonomous agents that ship systems by night.
                   DevSecOps: dependency + image scanning, signed builds,
                   branch-protected CI on every repo
 
-[agentic systems] multi-agent orchestration, RAG-backed decision loops,
-                  tool-use pipelines, prompt engineering, MCP-based
-                  tool integration — designed and operate a production
-                  autonomous multi-agent delivery system (Verawright,
-                  see below) plus a private long-running autonomous
-                  AI system with 24/7 evaluation loops and self-
-                  correction from real outcomes
+[agentic systems] RAG-backed retrieval stores, ReAct-style reasoning
+                  loops, MCP tool orchestration, prompt engineering —
+                  designed and operate a production autonomous multi-
+                  agent delivery system (Verawright, see below) plus a
+                  private long-running autonomous AI system with 24/7
+                  evaluation loops and self-correction from real
+                  outcomes. operates within the LangChain / Ollama
+                  tooling landscape for local-model + orchestration work
 
 [mobile]          Flutter + native Android (Kotlin platform channels) —
                   built a hands-free, wake-word-driven Sinhala voice
                   assistant with accessibility-service device control
                   and an LLM-backed NLU fallback chain
 
-[devops]          Docker · Kubernetes · GitHub Actions · Terraform
+[devops/secops]   Docker · Kubernetes · GitHub Actions · Terraform
                   observability: OpenTelemetry → Prometheus/Grafana/Loki
+                  designed a zero-tolerance CI merge gate for a live
+                  production multi-service backend: 100% test coverage,
+                  zero static-analysis issues, custom architecture-
+                  guideline enforcement (service-boundary rules, gRPC
+                  input validation, tenant isolation, transactional-
+                  outbox pattern, centralized error handling) — merge
+                  is blocked until every check is green
 
 [practice]        leads architecture + delivery decisions across
                   services; treats code review as a first-class skill,
@@ -72,6 +80,10 @@ designs autonomous agents that ship systems by night.
 | [**fastdl**](https://github.com/amasen02/fastdl) | Multi-connection segmented download accelerator (.NET 10) — mirror striping, resume, folder crawl |
 
 Every repo above ships with real tests, CI (lint/build/test), branch protection, Docker support, and a full open-source community-health profile (license, contributing guide, security policy, issue/PR templates) — not just a working demo.
+
+### `$ cat roadmap.log`
+
+- 🧪 **Up next:** a self-improving personal agent runtime — exploring the Hermes Agent / OpenClaw class of self-improving, learning-loop agent frameworks as a base to build on.
 
 ---
 
