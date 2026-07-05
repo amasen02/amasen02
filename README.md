@@ -29,47 +29,11 @@ designs autonomous agents that ship systems by night.
 
 ### `$ cat capabilities.log`
 
-```
-[architecture]    .NET/C# · Angular · Node.js · Next.js · Python
-                  microservices · DDD · CQRS · event-driven design
-                  SOLID / KISS / DRY / YAGNI enforced, not aspired to
+<div align="center">
 
-[security]        OWASP ASVS L2 by default on every service
-                  secrets scanning across source, git history, AI-agent
-                  configs (built credscan to prove it)
-                  DevSecOps: dependency + image scanning, signed builds,
-                  branch-protected CI on every repo
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/capabilities.svg" alt="Capabilities: architecture, security, agentic systems, mobile, devops, practice" width="100%" />
 
-[agentic systems] RAG-backed retrieval stores, ReAct-style reasoning
-                  loops, MCP tool orchestration, prompt engineering —
-                  designed and operate a production autonomous multi-
-                  agent delivery system (Verawright, see below) plus a
-                  private long-running autonomous AI system with 24/7
-                  evaluation loops and self-correction from real
-                  outcomes. operates within the LangChain / Ollama
-                  tooling landscape for local-model + orchestration work
-
-[mobile]          Flutter + native Android (Kotlin platform channels) —
-                  built a hands-free, wake-word-driven Sinhala voice
-                  assistant with accessibility-service device control
-                  and an LLM-backed NLU fallback chain
-
-[devops/secops]   Docker · Kubernetes · GitHub Actions · Terraform
-                  observability: OpenTelemetry → Prometheus/Grafana/Loki
-                  designed a zero-tolerance CI merge gate for a live
-                  production multi-service backend: 100% test coverage,
-                  zero static-analysis issues, custom architecture-
-                  guideline enforcement (service-boundary rules, gRPC
-                  input validation, tenant isolation, transactional-
-                  outbox pattern, centralized error handling) — merge
-                  is blocked until every check is green
-
-[practice]        leads architecture + delivery decisions across
-                  services; treats code review as a first-class skill,
-                  not an afterthought
-
-[status]          decrypting further modules...
-```
+</div>
 
 ---
 

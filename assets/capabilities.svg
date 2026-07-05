@@ -1,0 +1,92 @@
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Capabilities log: architecture, security, agentic systems, mobile, devops, practice</title>
+  <defs>
+    <linearGradient id="capBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+    <linearGradient id="scanBeamV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#39ff88" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#39ff88" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="capSigil" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#39ff88" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="600" rx="14" fill="url(#capBg)"/>
+
+  <!-- faint mystic sigil, background -->
+  <g transform="translate(760,110)" opacity="0.9">
+    <circle r="140" fill="url(#capSigil)"/>
+    <circle r="120" stroke="#39ff88" stroke-width="0.5" fill="none" opacity="0.1"/>
+    <circle r="90" stroke="#39ff88" stroke-width="0.5" stroke-dasharray="2 6" fill="none" opacity="0.12"/>
+  </g>
+
+  <!-- vertical scan beam sweeping top to bottom -->
+  <rect x="0" y="0" width="900" height="90" fill="url(#scanBeamV)">
+    <animate attributeName="y" values="60;560;60" dur="9s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="1" y="1" width="898" height="598" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+
+  <text x="30" y="32" font-family="monospace" font-size="13" fill="#39ff88" font-weight="bold">$ cat capabilities.log</text>
+  <line x1="30" y1="46" x2="870" y2="46" stroke="#1f2937" stroke-width="1"/>
+
+  <g font-family="monospace">
+    <!-- architecture -->
+    <text x="30" y="76" font-size="12" fill="#39ff88" font-weight="bold">
+      [architecture]<animate attributeName="opacity" values="0.5;1;0.5" dur="9s" begin="0s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="96" font-size="10" fill="#a8d8bd">.NET/C# · Angular · Node.js · Next.js · Python — microservices · DDD · CQRS · event-driven design</text>
+    <text x="30" y="113" font-size="10" fill="#a8d8bd">SOLID / KISS / DRY / YAGNI enforced, not aspired to</text>
+
+    <!-- security -->
+    <text x="30" y="147" font-size="12" fill="#39ff88" font-weight="bold">
+      [security]<animate attributeName="opacity" values="0.5;1;0.5" dur="9s" begin="1.1s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="167" font-size="10" fill="#a8d8bd">OWASP ASVS L2 by default on every service — secrets scanning across source, git history,</text>
+    <text x="30" y="184" font-size="10" fill="#a8d8bd">AI-agent configs (built credscan to prove it)</text>
+    <text x="30" y="201" font-size="10" fill="#a8d8bd">DevSecOps: dependency + image scanning, signed builds, branch-protected CI on every repo</text>
+
+    <!-- agentic systems -->
+    <text x="30" y="235" font-size="12" fill="#39ff88" font-weight="bold">
+      [agentic systems]<animate attributeName="opacity" values="0.5;1;0.5" dur="9s" begin="2.3s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="255" font-size="10" fill="#a8d8bd">RAG-backed retrieval stores, ReAct-style reasoning loops, MCP tool orchestration, prompt engineering</text>
+    <text x="30" y="272" font-size="10" fill="#a8d8bd">designed and operate a production autonomous multi-agent delivery system (Verawright) plus a</text>
+    <text x="30" y="289" font-size="10" fill="#a8d8bd">private long-running autonomous AI system with 24/7 evaluation loops and self-correction from</text>
+    <text x="30" y="306" font-size="10" fill="#a8d8bd">real outcomes. operates within the LangChain / Ollama tooling landscape for local-model work</text>
+
+    <!-- mobile -->
+    <text x="30" y="340" font-size="12" fill="#39ff88" font-weight="bold">
+      [mobile]<animate attributeName="opacity" values="0.5;1;0.5" dur="9s" begin="3.8s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="360" font-size="10" fill="#a8d8bd">Flutter + native Android (Kotlin platform channels) — built a hands-free, wake-word-driven</text>
+    <text x="30" y="377" font-size="10" fill="#a8d8bd">Sinhala voice assistant with accessibility-service device control and an LLM-backed NLU fallback</text>
+
+    <!-- devops/secops -->
+    <text x="30" y="411" font-size="12" fill="#39ff88" font-weight="bold">
+      [devops/secops]<animate attributeName="opacity" values="0.5;1;0.5" dur="9s" begin="4.8s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="431" font-size="10" fill="#a8d8bd">Docker · Kubernetes · GitHub Actions · Terraform — observability: OTel → Prometheus/Grafana/Loki</text>
+    <text x="30" y="448" font-size="10" fill="#a8d8bd">designed a zero-tolerance CI merge gate for a live production multi-service backend: 100% test</text>
+    <text x="30" y="465" font-size="10" fill="#a8d8bd">coverage, zero static-analysis issues, custom architecture-guideline enforcement (service-boundary</text>
+    <text x="30" y="482" font-size="10" fill="#a8d8bd">rules, gRPC input validation, tenant isolation, transactional-outbox, centralized error handling)</text>
+    <text x="30" y="499" font-size="10" fill="#a8d8bd">— merge is blocked until every check is green</text>
+
+    <!-- practice -->
+    <text x="30" y="533" font-size="12" fill="#39ff88" font-weight="bold">
+      [practice]<animate attributeName="opacity" values="0.5;1;0.5" dur="9s" begin="6.3s" repeatCount="indefinite"/>
+    </text>
+    <text x="30" y="553" font-size="10" fill="#a8d8bd">leads architecture + delivery decisions across services; treats code review as a first-class</text>
+    <text x="30" y="570" font-size="10" fill="#a8d8bd">skill, not an afterthought</text>
+  </g>
+
+  <text x="30" y="592" font-family="monospace" font-size="11" fill="#39ff88" opacity="0.9">
+    [status] decrypting further modules...<animate attributeName="opacity" values="0.5;1;0.5" dur="9s" begin="7.3s" repeatCount="indefinite"/>
+    <tspan fill="#39ff88">_<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></tspan>
+  </text>
+</svg>
