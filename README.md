@@ -2,6 +2,8 @@
 
 <img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg?v=3" alt="hooded developer at a glowing terminal" width="100%" />
 
+### Most profiles show what someone built. This one shows what someone taught to keep building without them.
+
 ```
 $ whoami
 ama_senevirathne — senior software engineer / tech lead
