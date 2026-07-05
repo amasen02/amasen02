@@ -87,19 +87,22 @@ Every repo above ships with real tests, CI (lint/build/test), branch protection,
 
 ---
 
+### `$ sudo cat /classified/systems.log`
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
+
+</div>
+
+---
+
 ### `$ tail -f contributions.log`
 
 <div align="center">
 
 ![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
 ![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake.svg#gh-light-mode-only)
-
-<br/>
-
-<img src="https://img.shields.io/github/followers/amasen02?style=for-the-badge&logo=github&label=followers&color=39ff88&logoColor=white" alt="followers" />
-<img src="https://img.shields.io/github/stars/amasen02/freshcart-backend?style=for-the-badge&logo=github&color=39ff88&logoColor=white&label=freshcart%20stars" alt="freshcart stars" />
-<img src="https://img.shields.io/github/stars/amasen02/fastdl?style=for-the-badge&logo=github&color=39ff88&logoColor=white&label=fastdl%20stars" alt="fastdl stars" />
-<img src="https://img.shields.io/github/stars/amasen02/credscan?style=for-the-badge&logo=github&color=39ff88&logoColor=white&label=credscan%20stars" alt="credscan stars" />
 
 </div>
 
