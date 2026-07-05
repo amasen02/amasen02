@@ -8,9 +8,32 @@
     <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
       <path d="M0,0 L6,3 L0,6 Z" fill="#39ff88"/>
     </marker>
+    <radialGradient id="sigilFade" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#39ff88" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <rect width="900" height="400" rx="14" fill="url(#bg3)"/>
+
+  <!-- faint mystic sigil, barely visible, behind everything -->
+  <g transform="translate(450,205)" opacity="0.9">
+    <circle r="220" fill="url(#sigilFade)"/>
+    <g stroke="#39ff88" stroke-width="0.5" fill="none" opacity="0.12">
+      <circle r="190"/>
+      <circle r="150" stroke-dasharray="2 6"/>
+      <circle r="110"/>
+      <line x1="-220" y1="0" x2="220" y2="0"/>
+      <line x1="0" y1="-220" x2="0" y2="220"/>
+    </g>
+    <circle r="3" fill="#39ff88" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- hidden message, decodable, styled as ambient boot noise: binary for "WAKE UP" -->
+  <text x="700" y="14" font-family="monospace" font-size="6.5" fill="#39ff88" opacity="0.28" letter-spacing="1">01010111 01000001 01001011 01000101 00100000 01010101 01010000</text>
+
   <rect x="1" y="1" width="898" height="398" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>
 
   <text x="30" y="30" font-family="monospace" font-size="13" fill="#39ff88" font-weight="bold">FRESHCART — 12 services, 12 deliberate architectures</text>
