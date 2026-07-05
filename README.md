@@ -81,6 +81,16 @@ designs autonomous agents that ship systems by night.
 
 Every repo above ships with real tests, CI (lint/build/test), branch protection, Docker support, and a full open-source community-health profile (license, contributing guide, security policy, issue/PR templates) — not just a working demo.
 
+### `$ cat freshcart/architecture.log`
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
+
+</div>
+
+Each FreshCart service gets the architecture its own requirements call for — not one pattern copy-pasted twelve times. Ordering earns DDD + a saga because it holds the richest invariants; Basket gets Redis + outbox because it's transient, high-throughput state; Payment gets event sourcing because compliance demands an immutable audit trail. That's a deliberate per-service decision, documented and enforced in the repo's own engineering standards.
+
 ### `$ cat roadmap.log`
 
 - 🧪 **Up next:** a self-improving personal agent runtime — exploring the Hermes Agent / OpenClaw class of self-improving, learning-loop agent frameworks as a base to build on.
