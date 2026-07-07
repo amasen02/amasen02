@@ -6,14 +6,18 @@
       <stop offset="100%" stop-color="#05070c"/>
     </linearGradient>
     <radialGradient id="sigilGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#39ff88" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="scanBeam" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#39ff88" stop-opacity="0"/>
       <stop offset="50%" stop-color="#39ff88" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
     </linearGradient>
+    <filter id="dossierGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
   <rect width="900" height="300" rx="14" fill="url(#bg2)"/>
@@ -21,7 +25,7 @@
 
   <!-- header bar -->
   <rect x="1" y="1" width="898" height="30" rx="13" fill="#1a1208"/>
-  <text x="20" y="21" font-family="monospace" font-size="12" fill="#ffb454" letter-spacing="1">CLASSIFICATION: RESTRICTED — CLEARANCE: OWNER ONLY</text>
+  <text x="20" y="21" font-family="monospace" font-size="12" fill="#ffb454" letter-spacing="1" filter="url(#dossierGlow)">CLASSIFICATION: RESTRICTED — CLEARANCE: OWNER ONLY</text>
   <text x="770" y="21" font-family="monospace" font-size="12" fill="#ffb454">FILE 02/02</text>
 
   <!-- sweeping scan beam over the whole dossier -->
@@ -30,27 +34,27 @@
   </rect>
 
   <!-- mystic sigil, faint, behind right-side dossier -->
-  <g transform="translate(700,175)" opacity="0.5">
+  <g transform="translate(700,175)" opacity="0.6">
     <circle r="85" fill="url(#sigilGlow)"/>
     <g>
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
-      <circle r="75" fill="none" stroke="#39ff88" stroke-width="0.6" opacity="0.5"/>
-      <circle r="56" fill="none" stroke="#39ff88" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.35"/>
+      <circle r="75" fill="none" stroke="#a855f7" stroke-width="0.6" opacity="0.5"/>
+      <circle r="56" fill="none" stroke="#a855f7" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.4"/>
     </g>
-    <g stroke="#39ff88" stroke-width="0.6" opacity="0.4">
+    <g stroke="#a855f7" stroke-width="0.6" opacity="0.4">
       <line x1="-85" y1="0" x2="85" y2="0"/>
       <line x1="0" y1="-85" x2="0" y2="85"/>
       <line x1="-60" y1="-60" x2="60" y2="60"/>
       <line x1="-60" y1="60" x2="60" y2="-60"/>
     </g>
-    <circle r="4" fill="#39ff88">
+    <circle r="4" fill="#a855f7">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="2.6s" repeatCount="indefinite"/>
     </circle>
   </g>
 
   <!-- case file 1: verawright -->
   <g transform="translate(30,50)">
-    <text font-family="monospace" font-size="13" fill="#39ff88" font-weight="bold">CASE 01 — VERAWRIGHT</text>
+    <text font-family="monospace" font-size="13" fill="#39ff88" font-weight="bold" filter="url(#dossierGlow)">CASE 01 — VERAWRIGHT</text>
     <text y="18" font-family="monospace" font-size="10.5" fill="#8ab" opacity="0.85">status: ACTIVE · 38-agent autonomous software company</text>
 
     <!-- agent swarm org diagram, nodes pulse in propagation order -->
@@ -88,7 +92,7 @@
 
   <!-- case file 2: AGI/ASI research -->
   <g transform="translate(430,50)">
-    <text font-family="monospace" font-size="13" fill="#ff6b6b" font-weight="bold">CASE 02 — AUTONOMOUS AGI/ASI RESEARCH</text>
+    <text font-family="monospace" font-size="13" fill="#ff6b6b" font-weight="bold" filter="url(#dossierGlow)">CASE 02 — AUTONOMOUS AGI/ASI RESEARCH</text>
     <text y="18" font-family="monospace" font-size="10.5" fill="#8ab" opacity="0.85">status: ACTIVE · 24/7 · private</text>
 
     <g font-family="monospace" font-size="9.5">

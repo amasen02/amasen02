@@ -13,6 +13,14 @@
     <clipPath id="patternsClip">
       <rect width="900" height="210" rx="14"/>
     </clipPath>
+    <filter id="patternsGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="patternsSigil" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <rect width="900" height="210" rx="14" fill="url(#bg4)"/>
@@ -21,7 +29,18 @@
   </rect>
   <rect x="1" y="1" width="898" height="208" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>
 
-  <text x="25" y="26" font-family="monospace" font-size="12.5" fill="#39ff88" font-weight="bold">$ grep -rl "SOLID\|DDD\|CQRS\|Saga\|Outbox" src/ — principles &amp; patterns, applied not aspired to</text>
+  <text x="25" y="26" font-family="monospace" font-size="12.5" fill="#39ff88" font-weight="bold" filter="url(#patternsGlow)">$ grep -rl "SOLID\|DDD\|CQRS\|Saga\|Outbox" src/ — principles &amp; patterns, applied not aspired to</text>
+
+  <g transform="translate(872,18)" opacity="0.85">
+    <circle r="14" fill="url(#patternsSigil)"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="22s" repeatCount="indefinite"/>
+      <circle r="10" fill="none" stroke="#a855f7" stroke-width="0.6" opacity="0.6"/>
+    </g>
+    <circle r="1.6" fill="#a855f7">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
 
   <g font-family="monospace" font-size="10.5" fill="#e6edf3">
     <!-- row 1 -->

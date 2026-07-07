@@ -1,50 +1,45 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg?v=3" alt="hooded developer at a glowing terminal" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg?v=4" alt="hooded developer at a glowing terminal, mystic-hacker edition" width="100%" />
 
-> *Ships quietly. Runs unsupervised. Never stops thinking.*
-
-```
-$ whoami
-ama_senevirathne — senior software engineer / tech lead
-
-$ cat mission.log
-ships production systems by day.
-designs autonomous agents that ship systems by night.
-```
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/terminal-boot.svg" alt="boot terminal: whoami and mission.log" width="100%" />
 
 </div>
 
 ---
-
-### `$ sudo cat /classified/systems.log`
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg?v=3" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg?v=4" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
 
 </div>
 
 ---
-
-### `$ cat capabilities.log`
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/capabilities.svg" alt="Capabilities: architecture, security, agentic systems, mobile, devops, practice" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/capabilities.svg?v=2" alt="Capabilities: architecture, security, agentic systems, mobile, devops, practice" width="100%" />
 
 </div>
 
 ---
 
-### `$ ls ~/projects`
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-projects.svg" alt="$ ls ~/projects" width="100%" />
+
+</div>
 
 - 🛒 **[FreshCart](https://github.com/amasen02/freshcart-backend)** — a .NET 10 + Aspire microservices e-commerce reference platform (catalog, cart, orders, identity), paired with an [Angular 20 zoneless/signal-based storefront](https://github.com/amasen02/freshcart-web).
 - 🗣️ **Sahayaka (සහායක)** — a hands-free Sinhala voice assistant for Android: wake-word detection, always-listening overlay service, accessibility-service-driven device control (WiFi/BT/calls/SMS/camera), and a layered NLU pipeline (pattern matching → LLM fallback) — built for elderly and visually-impaired users who need voice-first phone control.
 - 🤖 **Verawright** — an autonomous multi-agent software delivery system I designed and operate: specialized AI agents carry projects through the full lifecycle (research, build, QA, security review, release) under real engineering gates — CI, code review, branch protection — before anything ships.
 - 🧰 A growing set of open-source developer tools, each solving one real problem well — see below.
 
-### Featured public repos
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-repos.svg" alt="Featured public repos" width="100%" />
+
+</div>
 
 | Project | What it does |
 |---|---|
@@ -57,11 +52,9 @@ designs autonomous agents that ship systems by night.
 
 Every repo above ships with real tests, CI (lint/build/test), branch protection, Docker support, and a full open-source community-health profile (license, contributing guide, security policy, issue/PR templates) — not just a working demo.
 
-### `$ cat freshcart/architecture.log`
-
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg?v=7" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg?v=8" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
 
 </div>
 
@@ -69,30 +62,38 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-patterns.svg?v=3" alt="Design principles and patterns applied across FreshCart" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-patterns.svg?v=4" alt="Design principles and patterns applied across FreshCart" width="100%" />
 
 </div>
 
-### `$ cat roadmap.log`
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-roadmap.svg" alt="$ cat roadmap.log" width="100%" />
+
+</div>
 
 - 🧪 **Up next:** a self-improving personal agent runtime — exploring the Hermes Agent / OpenClaw class of self-improving, learning-loop agent frameworks as a base to build on.
 
 ---
 
-### `$ tail -f contributions.log`
-
 <div align="center">
 
-![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
-![snake gif](https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake.svg#gh-light-mode-only)
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-contributions.svg" alt="$ tail -f contributions.log" width="100%" />
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake-dark.svg" alt="contribution snake" />
 
 </div>
 
 ---
 
-### Stack
-
 <div align="center">
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-stack.svg" alt="Stack" width="100%" />
+
+<br/>
+
 <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" />
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white" alt="C#" />
 <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
@@ -108,10 +109,13 @@ Each FreshCart service gets the architecture its own requirements call for — n
 <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" />
 <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ" />
 <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure" />
+
 </div>
 
 ---
 
 <div align="center">
-<sub>Every repo here is real, working code with a green CI pipeline — click through and run it.</sub>
+
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/footer.svg" alt="every repo here is real, working code — click through and run it" width="100%" />
+
 </div>

@@ -1,0 +1,24 @@
+<svg width="900" height="56" viewBox="0 0 900 56" xmlns="http://www.w3.org/2000/svg">
+  <title>Section header: projects</title>
+  <defs>
+    <linearGradient id="hpBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+    <filter id="hpGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="56" rx="12" fill="url(#hpBg)"/>
+  <rect x="1" y="1" width="898" height="54" rx="11" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+  <path d="M8 20 L8 8 L20 8" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.85"/>
+  <path d="M892 36 L892 48 L880 48" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.85"/>
+  <text x="28" y="35" font-family="monospace" font-size="15" font-weight="bold" fill="#39ff88" filter="url(#hpGlow)">$ ls ~/projects</text>
+  <rect x="172" y="21" width="8" height="15" fill="#39ff88" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;0;0.85" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  <circle cx="866" cy="28" r="4" fill="#22d3ee">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
