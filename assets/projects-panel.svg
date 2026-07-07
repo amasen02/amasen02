@@ -1,0 +1,64 @@
+<svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <title>Projects: FreshCart, Sahayaka, Verawright, open-source tools</title>
+  <defs>
+    <linearGradient id="ppBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+    <linearGradient id="ppScan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#39ff88" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#39ff88" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ppSigil" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ppGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="ppClip">
+      <rect width="900" height="300" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <rect width="900" height="300" rx="14" fill="url(#ppBg)"/>
+
+  <rect x="0" y="0" width="900" height="90" fill="url(#ppScan)" clip-path="url(#ppClip)">
+    <animate attributeName="y" values="-45;300;-45" dur="9s" repeatCount="indefinite"/>
+  </rect>
+
+  <g transform="translate(858,26)" opacity="0.85">
+    <circle r="16" fill="url(#ppSigil)"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+      <circle r="11" fill="none" stroke="#a855f7" stroke-width="0.6" opacity="0.6"/>
+    </g>
+    <circle r="1.8" fill="#a855f7">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect x="1" y="1" width="898" height="298" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+
+  <text x="30" y="32" font-family="monospace" font-size="13" fill="#39ff88" font-weight="bold" filter="url(#ppGlow)">$ ls -la ~/projects</text>
+  <line x1="30" y1="46" x2="870" y2="46" stroke="#1f2937" stroke-width="1"/>
+
+  <g font-family="monospace">
+    <text x="30" y="76" font-size="12" fill="#39ff88" font-weight="bold" filter="url(#ppGlow)">🛒 FreshCart</text>
+    <text x="30" y="96" font-size="10" fill="#a8d8bd">.NET 10 + Aspire microservices e-commerce reference platform (catalog, cart, orders, identity),</text>
+    <text x="30" y="113" font-size="10" fill="#a8d8bd">paired with an Angular 20 zoneless/signal-based storefront.</text>
+
+    <text x="30" y="147" font-size="12" fill="#39ff88" font-weight="bold" filter="url(#ppGlow)">🗣 Sahayaka (සහායක)</text>
+    <text x="30" y="167" font-size="10" fill="#a8d8bd">a hands-free Sinhala voice assistant for Android — wake-word detection, always-listening overlay</text>
+    <text x="30" y="184" font-size="10" fill="#a8d8bd">service, accessibility-service device control (WiFi/BT/calls/SMS/camera), and a layered NLU</text>
+    <text x="30" y="201" font-size="10" fill="#a8d8bd">pipeline (pattern matching → LLM fallback) for elderly and visually-impaired users.</text>
+
+    <text x="30" y="235" font-size="12" fill="#39ff88" font-weight="bold" filter="url(#ppGlow)">🤖 Verawright</text>
+    <text x="30" y="255" font-size="10" fill="#a8d8bd">an autonomous multi-agent software delivery system — specialized AI agents carry projects through</text>
+    <text x="30" y="272" font-size="10" fill="#a8d8bd">research → build → QA → security review → release, gated by CI, code review, branch protection.</text>
+
+    <text x="30" y="292" font-size="10.5" fill="#39ff88" opacity="0.9">🧰 plus a growing set of open-source developer tools, each solving one real problem well</text>
+  </g>
+</svg>

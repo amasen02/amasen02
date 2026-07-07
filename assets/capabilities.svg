@@ -34,7 +34,7 @@
 
   <!-- vertical scan beam sweeping top to bottom -->
   <rect x="0" y="0" width="900" height="90" fill="url(#scanBeamV)">
-    <animate attributeName="y" values="60;560;60" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="-45;600;-45" dur="9s" repeatCount="indefinite"/>
   </rect>
 
   <rect x="1" y="1" width="898" height="598" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>

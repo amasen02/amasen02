@@ -1,0 +1,69 @@
+<svg width="900" height="340" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
+  <title>Featured public repos: freshcart-backend, freshcart-web, credscan, dupesweep, dupehunter, fastdl</title>
+  <defs>
+    <linearGradient id="rpBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+    <linearGradient id="rpScan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#39ff88" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#39ff88" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="rpSigil" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rpGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="rpClip">
+      <rect width="900" height="340" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <rect width="900" height="340" rx="14" fill="url(#rpBg)"/>
+
+  <rect x="0" y="0" width="900" height="90" fill="url(#rpScan)" clip-path="url(#rpClip)">
+    <animate attributeName="y" values="-45;340;-45" dur="9s" repeatCount="indefinite"/>
+  </rect>
+
+  <g transform="translate(858,26)" opacity="0.85">
+    <circle r="16" fill="url(#rpSigil)"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+      <circle r="11" fill="none" stroke="#a855f7" stroke-width="0.6" opacity="0.6"/>
+    </g>
+    <circle r="1.8" fill="#a855f7">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect x="1" y="1" width="898" height="338" rx="13" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+
+  <text x="30" y="32" font-family="monospace" font-size="13" fill="#39ff88" font-weight="bold" filter="url(#rpGlow)">$ cat featured_repos.log</text>
+  <line x1="30" y1="46" x2="870" y2="46" stroke="#1f2937" stroke-width="1"/>
+
+  <g font-family="monospace">
+    <text x="30" y="70" font-size="12" fill="#e6edf3" font-weight="bold" filter="url(#rpGlow)">freshcart-backend</text>
+    <text x="30" y="87" font-size="10" fill="#a8d8bd">.NET 10 + Aspire microservices e-commerce platform — CQRS, DDD, event-driven services, full observability</text>
+
+    <text x="30" y="115" font-size="12" fill="#e6edf3" font-weight="bold" filter="url(#rpGlow)">freshcart-web</text>
+    <text x="30" y="132" font-size="10" fill="#a8d8bd">Angular 20 customer storefront for FreshCart — zoneless, signal-based, HttpOnly-cookie auth</text>
+
+    <text x="30" y="160" font-size="12" fill="#e6edf3" font-weight="bold" filter="url(#rpGlow)">credscan</text>
+    <text x="30" y="177" font-size="10" fill="#a8d8bd">Secrets scanner for your codebase and your AI agent's memory — source, staged git changes, .claude/.cursor/.codex/MCP configs</text>
+
+    <text x="30" y="205" font-size="12" fill="#e6edf3" font-weight="bold" filter="url(#rpGlow)">dupesweep</text>
+    <text x="30" y="222" font-size="10" fill="#a8d8bd">Duplicate-file finder and reclaimer (.NET 10) — three-stage size/hash detection with reversible quarantine + restore</text>
+
+    <text x="30" y="250" font-size="12" fill="#e6edf3" font-weight="bold" filter="url(#rpGlow)">dupehunter</text>
+    <text x="30" y="267" font-size="10" fill="#a8d8bd">Hardlink-aware duplicate-file finder and reclaimer CLI — zero runtime dependencies</text>
+
+    <text x="30" y="295" font-size="12" fill="#e6edf3" font-weight="bold" filter="url(#rpGlow)">fastdl</text>
+    <text x="30" y="312" font-size="10" fill="#a8d8bd">Multi-connection segmented download accelerator (.NET 10) — mirror striping, resume, folder crawl</text>
+  </g>
+
+  <text x="30" y="332" font-family="monospace" font-size="9" fill="#39ff88" opacity="0.8">every repo: real tests, CI, branch protection, Docker, full open-source community-health profile</text>
+</svg>

@@ -26,31 +26,19 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-projects.svg" alt="$ ls ~/projects" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/projects-panel.svg" alt="projects: FreshCart, Sahayaka, Verawright, open-source tools" width="100%" />
+
+<sub>→ <a href="https://github.com/amasen02/freshcart-backend">FreshCart backend</a> · <a href="https://github.com/amasen02/freshcart-web">storefront</a></sub>
 
 </div>
-
-- 🛒 **[FreshCart](https://github.com/amasen02/freshcart-backend)** — a .NET 10 + Aspire microservices e-commerce reference platform (catalog, cart, orders, identity), paired with an [Angular 20 zoneless/signal-based storefront](https://github.com/amasen02/freshcart-web).
-- 🗣️ **Sahayaka (සහායක)** — a hands-free Sinhala voice assistant for Android: wake-word detection, always-listening overlay service, accessibility-service-driven device control (WiFi/BT/calls/SMS/camera), and a layered NLU pipeline (pattern matching → LLM fallback) — built for elderly and visually-impaired users who need voice-first phone control.
-- 🤖 **Verawright** — an autonomous multi-agent software delivery system I designed and operate: specialized AI agents carry projects through the full lifecycle (research, build, QA, security review, release) under real engineering gates — CI, code review, branch protection — before anything ships.
-- 🧰 A growing set of open-source developer tools, each solving one real problem well — see below.
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-repos.svg" alt="Featured public repos" width="100%" />
+<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/repos-table-panel.svg" alt="Featured public repos" width="100%" />
+
+<sub>→ <a href="https://github.com/amasen02/freshcart-backend">freshcart-backend</a> · <a href="https://github.com/amasen02/freshcart-web">freshcart-web</a> · <a href="https://github.com/amasen02/credscan">credscan</a> · <a href="https://github.com/amasen02/dupesweep">dupesweep</a> · <a href="https://github.com/amasen02/dupehunter">dupehunter</a> · <a href="https://github.com/amasen02/fastdl">fastdl</a></sub>
 
 </div>
-
-| Project | What it does |
-|---|---|
-| [**freshcart-backend**](https://github.com/amasen02/freshcart-backend) | .NET 10 + Aspire microservices e-commerce platform — CQRS, DDD, event-driven services, full observability stack |
-| [**freshcart-web**](https://github.com/amasen02/freshcart-web) | Angular 20 customer storefront for FreshCart — zoneless, signal-based, HttpOnly-cookie auth |
-| [**credscan**](https://github.com/amasen02/credscan) | Secrets scanner for your codebase *and* your AI agent's memory — source, staged git changes, `.claude`/`.cursor`/`.codex`/MCP configs |
-| [**dupesweep**](https://github.com/amasen02/dupesweep) | Duplicate-file finder and reclaimer (.NET 10) — three-stage size/hash detection with reversible quarantine + restore |
-| [**dupehunter**](https://github.com/amasen02/dupehunter) | Hardlink-aware duplicate-file finder and reclaimer CLI — zero runtime dependencies |
-| [**fastdl**](https://github.com/amasen02/fastdl) | Multi-connection segmented download accelerator (.NET 10) — mirror striping, resume, folder crawl |
-
-Every repo above ships with real tests, CI (lint/build/test), branch protection, Docker support, and a full open-source community-health profile (license, contributing guide, security policy, issue/PR templates) — not just a working demo.
 
 <div align="center">
 

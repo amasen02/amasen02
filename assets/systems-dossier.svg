@@ -30,7 +30,7 @@
 
   <!-- sweeping scan beam over the whole dossier -->
   <rect x="1" y="31" width="898" height="60" fill="url(#scanBeam)">
-    <animate attributeName="y" values="31;238;31" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="-30;300;-30" dur="9s" repeatCount="indefinite"/>
   </rect>
 
   <!-- mystic sigil, faint, behind right-side dossier -->

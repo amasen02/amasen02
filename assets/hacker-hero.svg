@@ -21,12 +21,22 @@
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <linearGradient id="heroScan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#39ff88" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#39ff88" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#39ff88" stop-opacity="0"/>
+    </linearGradient>
     <clipPath id="cardClip">
       <rect width="900" height="300" rx="14"/>
     </clipPath>
   </defs>
 
   <rect width="900" height="300" rx="14" fill="url(#bg)"/>
+
+  <!-- sweeping light beam, top to bottom, synced with every other panel -->
+  <rect x="0" y="0" width="900" height="90" fill="url(#heroScan)" clip-path="url(#cardClip)">
+    <animate attributeName="y" values="-45;300;-45" dur="9s" repeatCount="indefinite"/>
+  </rect>
 
   <!-- falling matrix-style code rain, clipped to the card -->
   <g clip-path="url(#cardClip)" font-family="monospace" font-size="12" fill="#22c55e">
