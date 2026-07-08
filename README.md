@@ -1,16 +1,8 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/hacker-hero.svg?v=4" alt="hooded developer at a glowing terminal, mystic-hacker edition" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/hacker-hero.svg" alt="hooded developer at a glowing terminal, mystic-hacker edition" width="100%" />
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/terminal-boot.svg" alt="boot terminal: whoami and mission.log" width="100%" />
-
-</div>
-
----
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/systems-dossier.svg?v=4" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/terminal-boot.svg" alt="boot terminal: whoami and mission.log" width="100%" />
 
 </div>
 
@@ -18,7 +10,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/capabilities.svg?v=2" alt="Capabilities: architecture, security, agentic systems, mobile, devops, practice" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/systems-dossier.svg" alt="Verawright multi-agent company and private AGI/ASI research summary" width="100%" />
 
 </div>
 
@@ -26,7 +18,15 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/projects-panel.svg" alt="projects: FreshCart, Sahayaka, Verawright, open-source tools" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/capabilities.svg" alt="Capabilities: architecture, security, agentic systems, mobile, devops, practice" width="100%" />
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/projects-panel.svg" alt="projects: FreshCart, Sahayaka, Verawright, open-source tools" width="100%" />
 
 <sub>→ <a href="https://github.com/amasen02/freshcart-backend">FreshCart backend</a> · <a href="https://github.com/amasen02/freshcart-web">storefront</a></sub>
 
@@ -34,7 +34,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/repos-table-panel.svg" alt="Featured public repos" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/repos-table-panel.svg" alt="Featured public repos" width="100%" />
 
 <sub>→ <a href="https://github.com/amasen02/freshcart-backend">freshcart-backend</a> · <a href="https://github.com/amasen02/freshcart-web">freshcart-web</a> · <a href="https://github.com/amasen02/credscan">credscan</a> · <a href="https://github.com/amasen02/dupesweep">dupesweep</a> · <a href="https://github.com/amasen02/dupehunter">dupehunter</a> · <a href="https://github.com/amasen02/fastdl">fastdl</a></sub>
 
@@ -42,7 +42,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-architecture.svg?v=8" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/freshcart-architecture.svg" alt="FreshCart microservices architecture and CI/CD pipeline" width="100%" />
 
 </div>
 
@@ -50,13 +50,13 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/freshcart-patterns.svg?v=4" alt="Design principles and patterns applied across FreshCart" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/freshcart-patterns.svg" alt="Design principles and patterns applied across FreshCart" width="100%" />
 
 </div>
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-roadmap.svg" alt="$ cat roadmap.log" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/header-roadmap.svg" alt="$ cat roadmap.log" width="100%" />
 
 </div>
 
@@ -66,11 +66,11 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-contributions.svg" alt="$ tail -f contributions.log" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/header-contributions.svg" alt="$ tail -f contributions.log" width="100%" />
 
 <br/>
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/output/github-contribution-grid-snake-dark.svg" alt="contribution snake" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@output/github-contribution-grid-snake-dark.svg" alt="contribution snake" />
 
 </div>
 
@@ -78,7 +78,7 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/header-stack.svg" alt="Stack" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/header-stack.svg" alt="Stack" width="100%" />
 
 <br/>
 
@@ -104,6 +104,6 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amasen02/amasen02/main/assets/footer.svg" alt="every repo here is real, working code — click through and run it" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/footer.svg" alt="every repo here is real, working code — click through and run it" width="100%" />
 
 </div>

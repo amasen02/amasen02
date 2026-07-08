@@ -28,3 +28,8 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Purge jsDelivr cache for the new snake SVGs
+        run: |
+          curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@output/github-contribution-grid-snake.svg" || true
+          curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@output/github-contribution-grid-snake-dark.svg" || true

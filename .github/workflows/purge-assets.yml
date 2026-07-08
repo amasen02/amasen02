@@ -1,0 +1,22 @@
+name: purge jsDelivr cache for profile assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "assets/**"
+      - "README.md"
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr cache for each asset
+        run: |
+          for f in hacker-hero.svg terminal-boot.svg systems-dossier.svg capabilities.svg \
+                   projects-panel.svg repos-table-panel.svg freshcart-architecture.svg \
+                   freshcart-patterns.svg header-roadmap.svg header-contributions.svg \
+                   header-stack.svg footer.svg; do
+            curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/assets/$f" || true
+          done
