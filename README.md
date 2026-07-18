@@ -36,7 +36,7 @@
 
 <img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/repos-table-panel.svg" alt="Featured public repos" width="100%" />
 
-<sub>→ <a href="https://github.com/amasen02/freshcart-backend">freshcart-backend</a> · <a href="https://github.com/amasen02/freshcart-web">freshcart-web</a> · <a href="https://github.com/amasen02/credscan">credscan</a> · <a href="https://github.com/amasen02/dupesweep">dupesweep</a> · <a href="https://github.com/amasen02/dupehunter">dupehunter</a> · <a href="https://github.com/amasen02/fastdl">fastdl</a></sub>
+<sub>→ <a href="https://github.com/amasen02/freshcart-backend">freshcart-backend</a> · <a href="https://github.com/amasen02/freshcart-web">freshcart-web</a> · <a href="https://github.com/amasen02/credscan">credscan</a> · <a href="https://github.com/amasen02/dupesweep">dupesweep</a> · <a href="https://github.com/amasen02/dupehunter">dupehunter</a> · <a href="https://github.com/amasen02/fastdl">fastdl</a> · <a href="https://github.com/amasen02/polyai-dotnet">polyai-dotnet</a></sub>
 
 </div>
 
