@@ -1,3 +1,6 @@
+> **Ama Senevirathne** — Full-Stack Software Engineer · .NET 10 / C# / Angular 20 / TypeScript / Next.js  
+> Microservices · DDD · CQRS · Event Sourcing · .NET Aspire · PostgreSQL · RabbitMQ · Docker · Kubernetes · Azure · AI/LLM engineering · Accessibility (WCAG 2.2)
+
 <div align="center">
 
 <img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/hacker-hero.svg" alt="hooded developer at a glowing terminal, mystic-hacker edition" width="100%" />
@@ -101,6 +104,17 @@ Each FreshCart service gets the architecture its own requirements call for — n
 </div>
 
 ---
+
+
+---
+
+<div align="center">
+
+**Connect** — [LinkedIn](https://linkedin.com/in/ama-sen) · [GitHub](https://github.com/amasen02) · [support@iykons.com](mailto:support@iykons.com)
+
+**Portfolio repos** — [freshcart-backend](https://github.com/amasen02/freshcart-backend) · [a11y-scope](https://github.com/amasen02/a11y-scope) · [polyai-dotnet](https://github.com/amasen02/polyai-dotnet) · [dupesweep](https://github.com/amasen02/dupesweep) · [fastdl](https://github.com/amasen02/fastdl)
+
+</div>
 
 <div align="center">
 
