@@ -110,7 +110,7 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-**Connect** — [LinkedIn](https://linkedin.com/in/ama-sen) · [GitHub](https://github.com/amasen02) · [support@iykons.com](mailto:support@iykons.com)
+**Connect** — [LinkedIn](https://linkedin.com/in/ama-sen) · [GitHub](https://github.com/amasen02) 
 
 **Portfolio repos** — [freshcart-backend](https://github.com/amasen02/freshcart-backend) · [a11y-scope](https://github.com/amasen02/a11y-scope) · [polyai-dotnet](https://github.com/amasen02/polyai-dotnet) · [dupesweep](https://github.com/amasen02/dupesweep) · [fastdl](https://github.com/amasen02/fastdl)
 
