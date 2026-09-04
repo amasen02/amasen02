@@ -3,6 +3,14 @@
 
 <div align="center">
 
+[![Available for Hire](https://img.shields.io/badge/Open%20To%20Work-Senior%20Software%20Engineer-007ACC?style=for-the-badge&logo=briefcase&logoColor=white)](https://linkedin.com/in/ama-sen)
+[![Remote Availability](https://img.shields.io/badge/Availability-Remote%20%2F%20Worldwide%20(Full--Time)-2ea44f?style=for-the-badge&logo=googlemaps&logoColor=white)](https://linkedin.com/in/ama-sen)
+[![Direct Outreach](https://img.shields.io/badge/Direct%20Outreach-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ama-sen)
+
+</div>
+
+<div align="center">
+
 <img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/hacker-hero.svg" alt="hooded developer at a glowing terminal, mystic-hacker edition" width="100%" />
 
 <img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/terminal-boot.svg" alt="boot terminal: whoami and mission.log" width="100%" />
@@ -81,6 +89,29 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
+### 🌐 Verified Production Open Source Contributions
+
+| Tier-1 Repository | Architecture & Domain | Engineering Impact | Verified PR |
+| :--- | :--- | :--- | :---: |
+| **[BerriAI/litellm](https://github.com/BerriAI/litellm)** *(25k+ ⭐)* | AI Gateway & LLM Proxy (Rust/Python) | Distributed spend-log retention lifecycle, async cancellation metrics, and strict test quality seams | [PR #39739](https://github.com/BerriAI/litellm/pull/39739) · [PR #39733](https://github.com/BerriAI/litellm/pull/39733) |
+| **[encode/starlette](https://github.com/encode/starlette)** *(12k+ ⭐)* | Core Python ASGI Engine | RFC-compliant header parsing, protocol edge-case handling, and 5/5 Python matrix verification | [PR #3505](https://github.com/encode/starlette/pull/3505) |
+| **[wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)** | Modern REST API Framework | Schema introspection and modern typing contracts | [Approved #1400](https://github.com/wemake-services/django-modern-rest/pull/1400) |
+| **[apmantza/pi-lens](https://github.com/apmantza/pi-lens)** | Embedded Systems & Computer Vision | Memory leak resolution, 1,481 tests verified, latency benchmark logging | [In Merge Queue #2568](https://github.com/apmantza/pi-lens/pull/2568) |
+| **[actions/runner](https://github.com/actions/runner)** | CI/CD & DevOps Engine | Self-hosted runner deployment architecture and container isolation | Active Contributor |
+
+### 🏆 Community Technical Leadership & Architectural Solutions
+**70+ vetted technical solutions** delivered across major developer communities:
+- **Agentic AI & LLMs**: Deterministic loop detection, trajectory circuit breakers, and RAG graph ingestion pipelines in **AutoGen**, **Semantic Kernel**, and **LlamaIndex**.
+- **.NET & ASP.NET Core**: Blazor WASM dual-debugger CDP arbitration, `IEndpointFilter` TypedResults introspection, and generic host lifecycle shutdown ordering.
+- **Angular Architecture**: CDK Virtual Scrolling browser clamping mitigations, zoneless signal state management, and type-safe Angular Material dialogs.
+- **DevOps & Infrastructure**: Ephemeral runner orchestration, container socket isolation, and OIDC multi-tenant workflow security.
+
+</div>
+
+---
+
+<div align="center">
+
 <img src="https://cdn.jsdelivr.net/gh/amasen02/amasen02@main/assets/header-stack.svg" alt="Stack" width="100%" />
 
 <br/>
@@ -110,9 +141,13 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-**Connect** — [LinkedIn](https://linkedin.com/in/ama-sen) · [GitHub](https://github.com/amasen02) 
+### 💼 Actively Interviewing & Open to Senior Roles
+**Target Roles**: Senior / Staff Full-Stack Engineer · Senior .NET (C#) Distributed Systems Engineer · Senior Agentic AI & AI Systems Engineer · Senior Frontend Engineer (Angular / TypeScript)  
+**Location & Availability**: 🌍 Remote (Worldwide / US / UK / EU / APAC overlap) · Available immediately for Full-Time & Long-term Contract  
+**Direct Recruiter Contact**: [Connect on LinkedIn (linkedin.com/in/ama-sen)](https://linkedin.com/in/ama-sen) · [GitHub Profile](https://github.com/amasen02)
 
-**Portfolio repos** — [freshcart-backend](https://github.com/amasen02/freshcart-backend) · [a11y-scope](https://github.com/amasen02/a11y-scope) · [polyai-dotnet](https://github.com/amasen02/polyai-dotnet) · [dupesweep](https://github.com/amasen02/dupesweep) · [fastdl](https://github.com/amasen02/fastdl)
+**Featured Portfolio Codebases**:  
+[FreshCart Microservices (.NET 10 + Aspire + Angular 20)](https://github.com/amasen02/freshcart-backend) · [FreshCart Storefront (Angular 20)](https://github.com/amasen02/freshcart-web) · [DupeSweep (.NET 10 CLI)](https://github.com/amasen02/dupesweep) · [FastDL Accelerator](https://github.com/amasen02/fastdl) · [a11y-scope (WCAG Monitor)](https://github.com/amasen02/a11y-scope) · [PolyAI Dotnet](https://github.com/amasen02/polyai-dotnet)
 
 </div>
 
