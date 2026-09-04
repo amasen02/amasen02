@@ -1,17 +1,15 @@
-> **Ama Senevirathne** — Senior / Staff Full-Stack & Distributed Systems Engineer · .NET 10 / C# / Angular 20 / TypeScript / Next.js / Python  
-> High-Throughput Distributed Microservices · DDD · CQRS · Event Sourcing · .NET Aspire · PostgreSQL · RabbitMQ · Docker · Kubernetes · Azure · AI/LLM Gateways & Agents · Accessibility (WCAG 2.2) · Open Source Contributor
+# Ama Senevirathne
+
+> Systems Architect & Core Contributor  
+> Engineering resilient distributed backends (.NET 10, C#, Python, Go), high-scale reactive frontends (Angular 20, TypeScript), and autonomous agent infrastructure.
 
 <div align="center">
 
-[![Available for Hire](https://img.shields.io/badge/Open%20To%20Work-Senior%20%2F%20Staff%20Engineer-007ACC?style=for-the-badge&logo=briefcase&logoColor=white)](https://linkedin.com/in/ama-sen)
-[![Remote Availability](https://img.shields.io/badge/Availability-Remote%20%2F%20Worldwide%20(Full--Time%20%7C%20Contract)-2ea44f?style=for-the-badge&logo=googlemaps&logoColor=white)](https://linkedin.com/in/ama-sen)
-[![Email Contact](https://img.shields.io/badge/Direct%20Email-amabandarasp%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:amabandarasp@gmail.com)
-[![Direct Outreach](https://img.shields.io/badge/Direct%20Outreach-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ama-sen)
-
-### 🎯 Fast-Track for Tech Recruiters & Engineering Hiring Managers
-**Open to Senior & Staff Roles**: Senior Full-Stack Engineer · Senior .NET (C#) Distributed Systems Engineer · Senior Agentic AI / AI Infrastructure Engineer · Senior Frontend Engineer (Angular / TypeScript)  
-**Timezone Flexibility**: 🌍 Remote Worldwide (Full US / UK / EU / APAC timezone overlap) · Available Immediately  
-**Weekly Interview Availability**: 5–6 technical interview slots open weekly. Direct email: **[amabandarasp@gmail.com](mailto:amabandarasp@gmail.com)**
+[![Production Contributions](https://img.shields.io/badge/Production%20Landed-160%2B%20PRs-8957e5?style=for-the-badge&logo=github&logoColor=white)](https://github.com/amasen02)
+[![Developer Stars](https://img.shields.io/badge/OSS%20Stars-300%2B%20%E2%AD%90-blue?style=for-the-badge&logo=apachespark&logoColor=white)](https://github.com/amasen02?tab=repositories)
+[![Architecture](https://img.shields.io/badge/Architecture-.NET%20Aspire%20%7C%20DDD%20%7C%20CQRS-2ea44f?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/amasen02/freshcart-backend)
+[![Inquiries](https://img.shields.io/badge/Inquiries-amabandarasp%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:amabandarasp@gmail.com)
+[![Network](https://img.shields.io/badge/Network-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ama-sen)
 
 </div>
 
@@ -122,7 +120,7 @@ Each FreshCart service gets the architecture its own requirements call for — n
 | **[apache/tooling-trusted-releases](https://github.com/apache/tooling-trusted-releases)** *(Apache)* | Release Security & Supply Chain | Automatic derivation of committee user mailing list names | [PR #1568](https://github.com/apache/tooling-trusted-releases/pull/1568) |
 | **[tphakala/go-remedy](https://github.com/tphakala/go-remedy)** | Cloud Native & Go Tooling | Pin GitHub Actions to full immutable commit SHAs for supply-chain hardening | [![Approved](https://img.shields.io/badge/Review-APPROVED-success?style=flat-square&logo=github)](https://github.com/tphakala/go-remedy/pull/9) |
 
-### 🏆 Community Technical Leadership & Architectural Solutions
+### 🏆 Technical Leadership & Architectural Solutions
 **80+ vetted technical solutions** delivered across major developer communities:
 - **Agentic AI & LLMs**: Deterministic loop detection, trajectory circuit breakers, and RAG graph ingestion pipelines in **AutoGen**, **Semantic Kernel**, and **LlamaIndex**.
 - **.NET & ASP.NET Core**: Blazor WASM dual-debugger CDP arbitration, `IEndpointFilter` TypedResults introspection, and generic host lifecycle shutdown ordering.
@@ -161,26 +159,22 @@ Each FreshCart service gets the architecture its own requirements call for — n
 
 <div align="center">
 
-### 💼 Why Tech Recruiters & Hiring Managers Hire Ama
-| What Hiring Teams Need | What I Deliver on Day One |
+### ⚡ Core Engineering Principles & Production Track Record
+| Engineering Principle | Applied Execution & Architectural Evidence |
 | :--- | :--- |
-| **Instant 0-Day Codebase Velocity** | Proven track record diving into complex 25k+ star foreign codebases (LiteLLM, Starlette, Prometheus, Apache, FleetDM) and landing clean, maintainer-approved PRs with zero friction. |
-| **High-Scale Distributed Systems** | Deep architectural mastery in .NET 10, C#, ASP.NET Core, Aspire, DDD, CQRS, Event Sourcing, Saga orchestration, and RabbitMQ message streaming. |
-| **Modern AI & Agentic Infrastructure** | Practical experience building LLM proxies, autonomous execution loops, tool-calling pipelines, token budget caches, and multimodal RAG engines. |
-| **Uncompromising Code Quality & CI/CD** | 100% test passing track record across Python matrix (3.10–3.14), TypeScript/Node, Go, and .NET. Automated linting, static analysis, and zero-defect deployments. |
-
-<br/>
-
-**Direct Recruiter Contact**:  
-📬 **Email**: [amabandarasp@gmail.com](mailto:amabandarasp@gmail.com)  
-💼 **LinkedIn**: [linkedin.com/in/ama-sen](https://linkedin.com/in/ama-sen)  
-🐙 **GitHub Profile**: [github.com/amasen02](https://github.com/amasen02)  
-📅 **Technical Interview Availability**: 5–6 interview slots open weekly. Reach out via email or LinkedIn for immediate scheduling.
+| **Zero-Ramp Upstream Velocity** | Seamlessly navigates 25k+ star codebases (LiteLLM, Starlette, Prometheus, Apache, FleetDM) to land clean, maintainer-approved, test-hardened patches on day one. |
+| **Resilient Distributed Systems** | End-to-end domain-driven design (.NET 10, C#, ASP.NET Core, Aspire, DDD, CQRS, Event Sourcing, Saga orchestration, RabbitMQ stream processing, and PostgreSQL concurrency control). |
+| **Autonomous & Agentic Systems** | Architecting production-grade tool-calling runtimes, deterministic state validation loops, AST mutation diffing, and self-healing telemetry monitors. |
+| **Hermetic Quality & Zero-Defect Standards** | Complete CI coverage across multi-runtime matrixes (Python 3.10–3.14, TypeScript/Node, Go, .NET), immutable commit SHA pinning, and OpenSSF security compliance. |
 
 <br/>
 
 **Featured Production Repositories**:  
 [FreshCart Microservices (.NET 10 + Aspire + Angular 20)](https://github.com/amasen02/freshcart-backend) · [FreshCart Storefront (Angular 20)](https://github.com/amasen02/freshcart-web) · [DupeSweep (.NET 10 CLI)](https://github.com/amasen02/dupesweep) · [FastDL Accelerator](https://github.com/amasen02/fastdl) · [a11y-scope (WCAG Monitor & OpenSSF Badge)](https://github.com/amasen02/a11y-scope) · [PolyAI Dotnet](https://github.com/amasen02/polyai-dotnet)
+
+<br/>
+
+<sub>For technical exchange, architecture discussions, or confidential engineering inquiries: <a href="mailto:amabandarasp@gmail.com">amabandarasp@gmail.com</a> · <a href="https://linkedin.com/in/ama-sen">LinkedIn</a> · <a href="https://github.com/amasen02">GitHub</a></sub>
 
 </div>
 
