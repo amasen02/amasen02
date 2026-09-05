@@ -1,4 +1,4 @@
-"""Self-contained GitHub README graphic primitives."""
+﻿"""Self-contained GitHub README graphic primitives."""
 from __future__ import annotations
 
 import base64
@@ -43,7 +43,7 @@ def hero_svg(animated: bool) -> str:
     if animated:
         motion = '<style>.xray{clip-path:polygon(0 0,0 0,0 100%,0 100%)}@media(prefers-reduced-motion:no-preference){.xray{animation:reveal 14s cubic-bezier(.55,0,.2,1) infinite}@keyframes reveal{0%,14%{clip-path:polygon(0 0,0 0,0 100%,0 100%)}44%,62%{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}92%,100%{clip-path:polygon(100% 0,100% 0,100% 100%,100% 100%)}}}</style>'
         reveal = f'<image class="xray" href="{xray}" width="1400" height="933" preserveAspectRatio="xMidYMid slice" clip-path="url(#art)"/>'
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="0 0 1400 1120" role="img" aria-labelledby="title description"><title id="title">Ama Senevirathne — engineering source matter</title><desc id="description">An original architectural letter A sculpture made from metallic filaments and ceramic surfaces.</desc>{motion}<defs><clipPath id="art"><rect width="1400" height="933"/></clipPath><linearGradient id="bar" x2="1" y2="0"><stop stop-color="#080c12"/><stop offset="1" stop-color="#141924"/></linearGradient></defs><rect width="1400" height="1120" fill="#080c12"/><image href="{base}" width="1400" height="933" preserveAspectRatio="xMidYMid slice" clip-path="url(#art)"/>{reveal}<rect y="933" width="1400" height="187" fill="url(#bar)"/><path d="M58 977h1284M58 1084h1284" stroke="#f4f4ee" opacity=".24"/><text x="58" y="972" fill="#f4f4ee" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3">AMA / ENGINEERING</text><text x="58" y="1042" fill="#f4f4ee" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="800" letter-spacing="-2">AMA SENEVIRATHNE</text><text x="62" y="1080" fill="#c8ccd4" font-family="Arial,Helvetica,sans-serif" font-size="22" letter-spacing=".5">AI &amp; FULL-STACK ENGINEER</text><text x="1338" y="1080" fill="#ff7254" text-anchor="end" font-family="monospace" font-size="13">SOURCE / FORM / 01</text></svg>'''
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="933" viewBox="0 0 1400 933" role="img" aria-labelledby="title description"><title id="title">Source into Form</title><desc id="description">An original architectural letter A sculpture made from metallic filaments and ceramic surfaces.</desc>{motion}<defs><clipPath id="art"><rect width="1400" height="933"/></clipPath></defs><rect width="1400" height="933" fill="#080c12"/><image href="{base}" width="1400" height="933" preserveAspectRatio="xMidYMid slice" clip-path="url(#art)"/>{reveal}</svg>'''
 
 
 def _waves() -> str:
