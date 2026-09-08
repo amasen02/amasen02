@@ -68,17 +68,17 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 
 ## Open-source contributions
 
-**9 verified merged pull requests across 9 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
+**10 verified merged pull requests across 10 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
 
-**Repositories:** [apmantza/pi-lens](https://github.com/apmantza/pi-lens) · [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery) · [BerriAI/litellm](https://github.com/BerriAI/litellm) · [calibrain/shelfmark](https://github.com/calibrain/shelfmark) · [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch) · [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe) · [schubydoo/clauster](https://github.com/schubydoo/clauster) · [theagentplane/tokenops](https://github.com/theagentplane/tokenops) · [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)
+**Repositories:** [apmantza/pi-lens](https://github.com/apmantza/pi-lens) · [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery) · [BerriAI/litellm](https://github.com/BerriAI/litellm) · [calibrain/shelfmark](https://github.com/calibrain/shelfmark) · [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch) · [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe) · [plur-ai/plur](https://github.com/plur-ai/plur) · [schubydoo/clauster](https://github.com/schubydoo/clauster) · [theagentplane/tokenops](https://github.com/theagentplane/tokenops) · [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)
 
 ## Selected upstream merges
 
+- **[plur-ai/plur](https://github.com/plur-ai/plur/pull/1122)** — fix(recall): return bare operable engram IDs and enable remote forget (#1119)
 - **[BerriAI/litellm](https://github.com/BerriAI/litellm/pull/39729)** — Made budget resets invalidate the affected end-user spend counter and cache.
 - **[apmantza/pi-lens](https://github.com/apmantza/pi-lens/pull/2568)** — Overlapped auxiliary LSP warmup with the primary server during resync.
-- **[schubydoo/clauster](https://github.com/schubydoo/clauster/pull/1485)** — Avoided appending a redundant .gitignore rule when an existing rule already covers the path.
 
-<details><summary>Full merged-PR catalog (9)</summary>
+<details><summary>Full merged-PR catalog (10)</summary>
 
 #### [apmantza/pi-lens](https://github.com/apmantza/pi-lens)
 
@@ -103,6 +103,10 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 #### [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe)
 
 - [test: extract shared vitest base config to de-duplicate n8n-workflow alias (#7)](https://github.com/MihaelaAghirculesei/n8n-probe/pull/10)
+
+#### [plur-ai/plur](https://github.com/plur-ai/plur)
+
+- [fix(recall): return bare operable engram IDs and enable remote forget (#1119)](https://github.com/plur-ai/plur/pull/1122)
 
 #### [schubydoo/clauster](https://github.com/schubydoo/clauster)
 
