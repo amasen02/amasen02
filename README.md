@@ -68,21 +68,25 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 
 ## Open-source contributions
 
-**11 verified merged pull requests across 11 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
+**12 verified merged pull requests across 12 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
 
-**Repositories:** [apmantza/pi-lens](https://github.com/apmantza/pi-lens) · [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery) · [BerriAI/litellm](https://github.com/BerriAI/litellm) · [calibrain/shelfmark](https://github.com/calibrain/shelfmark) · [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch) · [fleetdm/fleet](https://github.com/fleetdm/fleet) · [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe) · [plur-ai/plur](https://github.com/plur-ai/plur) · [schubydoo/clauster](https://github.com/schubydoo/clauster) · [theagentplane/tokenops](https://github.com/theagentplane/tokenops) · [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)
+**Repositories:** [apmantza/pi-lens](https://github.com/apmantza/pi-lens) · [Arize-ai/phoenix](https://github.com/Arize-ai/phoenix) · [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery) · [BerriAI/litellm](https://github.com/BerriAI/litellm) · [calibrain/shelfmark](https://github.com/calibrain/shelfmark) · [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch) · [fleetdm/fleet](https://github.com/fleetdm/fleet) · [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe) · [plur-ai/plur](https://github.com/plur-ai/plur) · [schubydoo/clauster](https://github.com/schubydoo/clauster) · [theagentplane/tokenops](https://github.com/theagentplane/tokenops) · [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)
 
 ## Selected upstream merges
 
+- **[Arize-ai/phoenix](https://github.com/Arize-ai/phoenix/pull/15964)** — fix(server): remove PEP 765 return in finally from playground\_users.get\_user
 - **[fleetdm/fleet](https://github.com/fleetdm/fleet/pull/52620)** — fix(mdm): prevent windows client certificate lifetime truncation (#52601)
 - **[plur-ai/plur](https://github.com/plur-ai/plur/pull/1122)** — fix(recall): return bare operable engram IDs and enable remote forget (#1119)
-- **[BerriAI/litellm](https://github.com/BerriAI/litellm/pull/39729)** — Made budget resets invalidate the affected end-user spend counter and cache.
 
-<details><summary>Full merged-PR catalog (11)</summary>
+<details><summary>Full merged-PR catalog (12)</summary>
 
 #### [apmantza/pi-lens](https://github.com/apmantza/pi-lens)
 
 - [fix(lsp): overlap auxiliary LSP warmup with primary server during resync (#2540)](https://github.com/apmantza/pi-lens/pull/2568)
+
+#### [Arize-ai/phoenix](https://github.com/Arize-ai/phoenix)
+
+- [fix(server): remove PEP 765 return in finally from playground\_users.get\_user](https://github.com/Arize-ai/phoenix/pull/15964)
 
 #### [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery)
 
