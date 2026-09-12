@@ -8,7 +8,7 @@ from urllib.parse import quote, urlparse
 
 from . import github_art
 
-TEMPLATE_VERSION = "github-source-matter-2026-09-05-v4"
+TEMPLATE_VERSION = "github-source-matter-2026-09-12-v5"
 DOT = "\N{MIDDLE DOT}"
 DASH = "\N{EM DASH}"
 
@@ -24,6 +24,12 @@ FEATURES = {
         "category": "MCP secret scanning / Python",
         "note": "Inspects MCP environment values, headers and arguments while skipping environment-variable placeholders.",
         "source": "https://github.com/amasen02/credscan/blob/main/src/credscan/agent_artifacts.py",
+    },
+    "mcp-breakbench": {
+        "title": "mcp-breakbench",
+        "category": "MCP regression lab / Python",
+        "note": "Runs explicit allowlisted cases against real stdio servers and records inspectable receipts.",
+        "source": "https://github.com/amasen02/mcp-breakbench/blob/master/src/mcp_breakbench/runner.py",
     },
     "freshcart-backend": {
         "title": "FreshCart",
@@ -52,6 +58,11 @@ PROJECT_SOURCES = {
         "artifacts": "https://github.com/amasen02/credscan/blob/main/src/credscan/agent_artifacts.py",
         "git": "https://github.com/amasen02/credscan/blob/main/src/credscan/git_integration.py",
     },
+    "mcp-breakbench": {
+        "readme": "https://github.com/amasen02/mcp-breakbench/blob/master/README.md",
+        "runner": "https://github.com/amasen02/mcp-breakbench/blob/master/src/mcp_breakbench/runner.py",
+        "snapshot": "https://github.com/amasen02/mcp-breakbench/blob/master/src/mcp_breakbench/snapshot.py",
+    },
     "freshcart-backend": {
         "checkout": "https://github.com/amasen02/freshcart-backend/blob/master/src/Services/Ordering/FreshCart.Ordering.Application/Checkout/CheckoutSagaStateMachine.cs",
         "payments": "https://github.com/amasen02/freshcart-backend/blob/master/src/Services/Payment/FreshCart.Payment.Infrastructure/EventStore/MongoPaymentEventStore.cs",
@@ -71,13 +82,13 @@ CONTRIBUTION_HIGHLIGHTS = {
         "repository": "BerriAI/litellm",
         "summary": "Made budget resets invalidate the affected end-user spend counter and cache.",
     },
-    "https://github.com/apmantza/pi-lens/pull/2568": {
-        "repository": "apmantza/pi-lens",
-        "summary": "Overlapped auxiliary LSP warmup with the primary server during resync.",
+    "https://github.com/fleetdm/fleet/pull/52620": {
+        "repository": "fleetdm/fleet",
+        "summary": "Prevented Windows client-certificate validity from being truncated to one year.",
     },
-    "https://github.com/schubydoo/clauster/pull/1485": {
-        "repository": "schubydoo/clauster",
-        "summary": "Avoided appending a redundant .gitignore rule when an existing rule already covers the path.",
+    "https://github.com/Arize-ai/phoenix/pull/15964": {
+        "repository": "Arize-ai/phoenix",
+        "summary": "Removed a return from a finally block in playground_users.get_user to resolve a PEP 765 diagnostic.",
     },
 }
 
@@ -167,7 +178,7 @@ def _hero_block(identity: dict) -> list[str]:
         "  </picture>",
         "</p>",
         "",
-        "I build the systems around AI: provider integrations, tool calling, security tooling, distributed backends, and the interfaces people use.",
+        "I build and test the boundaries around AI systems: provider integrations, tool calling, security tooling, distributed backends, and the interfaces people use. My source includes [PolyAI .NET](https://github.com/amasen02/polyai-dotnet), [CredScan](https://github.com/amasen02/credscan), and [mcp-breakbench](https://github.com/amasen02/mcp-breakbench).",
         "",
     ]
 
@@ -190,6 +201,15 @@ def _project_proof(project: dict, project_id: str) -> list[str]:
             "is scanned as staged. "
             f"[Agent artifacts]({_safe_href(source['artifacts'])}) {DOT} "
             f"[Git integration]({_safe_href(source['git'])})"
+        )
+    elif project_id == "mcp-breakbench":
+        text = (
+            "Python MCP interoperability and regression lab that launches configured servers over "
+            "stdio, snapshots advertised tool contracts, and runs explicit allowlisted cases with "
+            "deterministic JSON receipts. "
+            f"[README]({_safe_href(source['readme'])}) {DOT} "
+            f"[Runner]({_safe_href(source['runner'])}) {DOT} "
+            f"[Contract diff]({_safe_href(source['snapshot'])})"
         )
     else:
         text = (
@@ -236,12 +256,19 @@ def _evidence_href(project: dict, label: str) -> str:
 
 def _selected_builds(projects: dict) -> list[str]:
     lines: list[str] = []
-    ai_projects = [project_id for project_id in ("polyai-dotnet", "credscan") if project_id in projects]
+    ai_projects = [
+        project_id
+        for project_id in ("polyai-dotnet", "credscan", "mcp-breakbench")
+        if project_id in projects
+    ]
     centaurloop = projects.get("centaurloop-agent-governor")
     if ai_projects or centaurloop:
         lines.extend(["## AI & agent systems", ""])
         for project_id in ai_projects:
-            lines.extend(_featured_build(projects[project_id], project_id))
+            if project_id == "mcp-breakbench":
+                lines.extend(_project_proof(projects[project_id], project_id))
+            else:
+                lines.extend(_featured_build(projects[project_id], project_id))
         if centaurloop:
             repository = _safe_href(centaurloop["url"])
             implementation = _evidence_href(centaurloop, "Implementation")
@@ -299,6 +326,12 @@ def _capability_map(projects: dict) -> list[str]:
         claims.append(
             f"- **Agent security** {DASH} Python inspection of MCP configuration and staged Git content. "
             f"[Evidence]({_safe_href(PROJECT_SOURCES['credscan']['artifacts'])})"
+        )
+    if "mcp-breakbench" in projects:
+        claims.append(
+            f"- **MCP interoperability** {DASH} real stdio probes, contract snapshots, explicit "
+            "allowlists, and typed receipts. "
+            f"[Evidence]({_safe_href(PROJECT_SOURCES['mcp-breakbench']['runner'])})"
         )
     if "freshcart-backend" in projects:
         source = PROJECT_SOURCES["freshcart-backend"]
@@ -382,8 +415,13 @@ def _contribution_block(
         for repository in sorted(grouped, key=str.casefold)
     ]
     lines.extend([f"**Repositories:** {f' {DOT} '.join(repositories)}", "", "## Selected upstream merges", ""])
+    ranked = {url: rank for rank, url in enumerate(CONTRIBUTION_HIGHLIGHTS)}
+    prioritized = sorted(
+        verified,
+        key=lambda item: ranked.get(item["url"], len(ranked)),
+    )
     selected: list[str] = []
-    for item in verified:
+    for item in prioritized:
         highlight = CONTRIBUTION_HIGHLIGHTS.get(item["url"])
         if highlight and highlight["repository"] == item.get("repository"):
             summary = highlight["summary"]

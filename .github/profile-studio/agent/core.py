@@ -26,10 +26,11 @@ UTC = timezone.utc
 MAX_PAGES = 3
 PR_SEARCH_PAGE_SIZE = 100
 PR_SEARCH_MAX_RESULTS = 1000
-RENDERER_VERSION = "2026-09-05.6"
+RENDERER_VERSION = "2026-09-12.1"
 CURATED = {
     "polyai-dotnet": {"title": "PolyAI .NET", "category": "ai"},
     "credscan": {"title": "CredScan", "category": "ai"},
+    "mcp-breakbench": {"title": "mcp-breakbench", "category": "ai"},
     "centaurloop-agent-governor": {
         "title": "CentaurLoop",
         "category": "ai",
