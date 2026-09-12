@@ -68,6 +68,74 @@ jobs:
           PY
           cp "$RUNNER_TEMP/criticality-audit/targets.txt" targets.txt
 
+      - name: Diagnose issue visibility for representative repositories
+        run: |
+          set -uo pipefail
+          audit_dir="$RUNNER_TEMP/criticality-audit"
+          diagnostic="$audit_dir/issue-api-diagnostic.json"
+          since="$(date -u -d '90 days ago' '+%Y-%m-%dT%H:%M:%SZ')"
+          captured_at="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          for repo in polyai-dotnet freshcart-backend; do
+            raw="$audit_dir/.issue-$repo.raw"
+            error_file="$audit_dir/.issue-$repo.error"
+            set +e
+            gh api --include "repos/amasen02/$repo/issues?state=all&since=$since&per_page=1" > "$raw" 2> "$error_file"
+            exit_code=$?
+            set -e
+            python - "$raw" "$diagnostic" "$repo" "$since" "$captured_at" "$exit_code" "$error_file" <<'PY'
+            import json
+            import re
+            import sys
+            from pathlib import Path
+
+            raw_path, output_path, repo, since, captured_at, exit_code, error_path = sys.argv[1:]
+            raw = Path(raw_path).read_text(encoding="utf-8", errors="replace")
+            response_status = None
+            last_page = None
+            body = ""
+            for separator in ("\r\n\r\n", "\n\n"):
+                if separator in raw:
+                    header_text, body = raw.split(separator, 1)
+                    break
+            else:
+                header_text = raw
+            status_match = re.search(r"^HTTP/[^ ]+\s+(\d{3})", header_text, re.MULTILINE)
+            if status_match:
+                response_status = int(status_match.group(1))
+            link_match = re.search(r"[?&]page=(\d+)[^>]*>;\s*rel=\"last\"", header_text)
+            if link_match:
+                last_page = int(link_match.group(1))
+            item_count = None
+            latest_number = None
+            try:
+                items = json.loads(body)
+                if isinstance(items, list):
+                    item_count = len(items) if last_page is None else last_page
+                    if items and isinstance(items[0], dict):
+                        latest_number = items[0].get("number")
+            except json.JSONDecodeError:
+                pass
+            error = Path(error_path).read_text(encoding="utf-8", errors="replace").strip()
+            entries = []
+            if Path(output_path).exists():
+                entries = json.loads(Path(output_path).read_text(encoding="utf-8"))
+            entries.append({
+                "repository": f"amasen02/{repo}",
+                "request": f"GET /repos/amasen02/{repo}/issues?state=all&since={since}&per_page=1",
+                "captured_at_utc": captured_at,
+                "exit_code": int(exit_code),
+                "response_status": response_status,
+                "link_last_page": last_page,
+                "reported_count": item_count,
+                "latest_number": latest_number,
+                "error": error[:500] if error else None,
+            })
+            Path(output_path).write_text(json.dumps(entries, indent=2) + "\n", encoding="utf-8")
+            PY
+            rm -f -- "$raw" "$error_file"
+          done
+          cat "$diagnostic"
+
       - name: Install official criticality scorer
         run: go install github.com/ossf/criticality_score/v2/cmd/criticality_score@v2.0.4
 
@@ -92,6 +160,8 @@ jobs:
               "tool_version": "v2.0.4",
               "format": "csv",
               "workers": 1,
+              "collection": "one official scorer process per repository, combined with exact header checks",
+              "inter_repository_delay_seconds": 3,
               "depsdev": "disabled via -depsdev-disable (optional source only)",
               "scoring_config": "official embedded original_pike.yml defaults",
               "targets": ".github/criticality/targets.json plus public non-fork amasen02 discovery",
@@ -105,13 +175,80 @@ jobs:
       - name: Collect official signals and scores
         id: collect
         run: |
-          set -o pipefail
-          criticality_score -format csv -workers 1 -depsdev-disable -out "$RUNNER_TEMP/criticality-audit/raw.csv" -force targets.txt 2>&1 | tee "$RUNNER_TEMP/criticality-audit/criticality.log"
+          set -uo pipefail
+          audit_dir="$RUNNER_TEMP/criticality-audit"
+          results_dir="$audit_dir/per-repository"
+          mkdir -p "$results_dir"
+          status_file="$audit_dir/collection-status.tsv"
+          : > "$status_file"
+          collection_failed=0
+          repository_number=0
+          while IFS= read -r repo || [[ -n "$repo" ]]; do
+            [[ -z "$repo" ]] && continue
+            printf -v stem 'repo-%03d' "$repository_number"
+            result_file="$results_dir/$stem.csv"
+            log_file="$results_dir/$stem.log"
+            set +e
+            criticality_score -format csv -workers 1 -depsdev-disable -out "$result_file" -force "$repo" > "$log_file" 2>&1
+            exit_code=$?
+            set -e
+            if [[ ! -s "$result_file" ]]; then
+              result_present=false
+              collection_failed=1
+            else
+              result_present=true
+            fi
+            printf '%s\t%s\t%s\t%s\t%s\n' "$repo" "$exit_code" "$result_present" "$result_file" "$log_file" >> "$status_file"
+            if (( exit_code != 0 )); then collection_failed=1; fi
+            repository_number=$((repository_number + 1))
+            sleep 3
+          done < targets.txt
+
+          set +e
+          python - "$audit_dir/raw.csv" "$results_dir" <<'PY'
+          import csv
+          import sys
+          from pathlib import Path
+
+          output = Path(sys.argv[1])
+          inputs = sorted(path for path in Path(sys.argv[2]).glob("*.csv") if path.stat().st_size)
+          if not inputs:
+              raise SystemExit("no per-repository CSV evidence was produced")
+          header = None
+          with output.open("w", newline="", encoding="utf-8") as stream:
+              writer = csv.writer(stream)
+              for path in inputs:
+                  with path.open(newline="", encoding="utf-8") as source:
+                      reader = csv.reader(source)
+                      try:
+                          current_header = next(reader)
+                      except StopIteration as exc:
+                          raise SystemExit(f"empty CSV evidence: {path}") from exc
+                      if header is None:
+                          header = current_header
+                          writer.writerow(header)
+                      elif current_header != header:
+                          raise SystemExit(f"CSV header mismatch: {path}")
+                      rows = list(reader)
+                      if len(rows) != 1 or len(rows[0]) != len(header):
+                          raise SystemExit(f"expected exactly one well-formed row: {path}")
+                      writer.writerow(rows[0])
+          print(f"combined={len(inputs)} raw={output}")
+          PY
+          combine_code=$?
+          set -e
+          if (( combine_code != 0 )); then collection_failed=1; fi
+          printf 'aggregate\t%s\t%s\n' "$collection_failed" "$repository_number" >> "$status_file"
+          exit "$collection_failed"
 
       - name: Validate and summarize results
-        if: always() && steps.collect.outcome == 'success'
+        if: always()
         run: |
           set -euo pipefail
+          if [[ ! -s "$RUNNER_TEMP/criticality-audit/raw.csv" ]]; then
+            echo 'No raw CSV evidence was produced; threshold results are UNKNOWN.' | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
           python .github/criticality/summarize.py \
             --csv "$RUNNER_TEMP/criticality-audit/raw.csv" \
             --expected targets.txt \

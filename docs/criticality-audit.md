@@ -15,6 +15,12 @@ permissions are read-only.
 
 Raw CSV, collection logs, the command version, UTC timestamp, target discovery,
 configuration provenance, and the validated summary are uploaded as one artifact.
+Each repository is collected in a fresh official scorer process, with a three
+second delay between repositories to stay below GitHub commit-search rate limits.
+Per-repository exit status, result presence, CSV, and log are retained; the
+aggregate collection step fails when any repository fails. Available per-repository
+CSV files are combined only when their headers match exactly, and the summarizer
+runs whenever that aggregate raw CSV exists, including after a partial collection.
 The summary requires all ten legacy inputs and a finite score in `[0, 1]` for
 every expected row. Missing or invalid values are `UNKNOWN`, never zero, and fail
 the validation gate. A score is marked `THRESHOLD_MET` using the exact comparison
