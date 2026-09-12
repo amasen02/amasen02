@@ -11,7 +11,7 @@
   </picture>
 </p>
 
-I build the systems around AI: provider integrations, tool calling, security tooling, distributed backends, and the interfaces people use.
+I build and test the boundaries around AI systems: provider integrations, tool calling, security tooling, distributed backends, and the interfaces people use. My source includes [PolyAI .NET](https://github.com/amasen02/polyai-dotnet), [CredScan](https://github.com/amasen02/credscan), and [mcp-breakbench](https://github.com/amasen02/mcp-breakbench).
 
 ## AI & agent systems
 
@@ -24,6 +24,9 @@ C# multi-provider SDK with streaming, structured output, and runtime tool discov
 
 ### [CredScan](https://github.com/amasen02/credscan)
 Python scanning for source, staged changes, and agent configuration. It inspects MCP environment values, headers, and arguments, and reads Git index blobs so staged content is scanned as staged. [Agent artifacts](https://github.com/amasen02/credscan/blob/main/src/credscan/agent_artifacts.py) · [Git integration](https://github.com/amasen02/credscan/blob/main/src/credscan/git_integration.py)
+
+### [mcp-breakbench](https://github.com/amasen02/mcp-breakbench)
+Python MCP interoperability and regression lab that launches configured servers over stdio, snapshots advertised tool contracts, and runs explicit allowlisted cases with deterministic JSON receipts. [README](https://github.com/amasen02/mcp-breakbench/blob/master/README.md) · [Runner](https://github.com/amasen02/mcp-breakbench/blob/master/src/mcp_breakbench/runner.py) · [Contract diff](https://github.com/amasen02/mcp-breakbench/blob/master/src/mcp_breakbench/snapshot.py)
 
 <a href="https://github.com/amasen02/centaurloop-agent-governor"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/plate-centaurloop-agent-governor-static.svg"><img src="assets/plate-centaurloop-agent-governor.svg" alt="CentaurLoop — Coding-agent checks / Python" width="100%"></picture></a>
 
@@ -59,6 +62,7 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 
 - **AI integrations and tools** — C# provider boundaries, JSON Schema, streaming, and structured output. [Evidence](https://github.com/amasen02/polyai-dotnet/blob/main/README.md)
 - **Agent security** — Python inspection of MCP configuration and staged Git content. [Evidence](https://github.com/amasen02/credscan/blob/main/src/credscan/agent_artifacts.py)
+- **MCP interoperability** — real stdio probes, contract snapshots, explicit allowlists, and typed receipts. [Evidence](https://github.com/amasen02/mcp-breakbench/blob/master/src/mcp_breakbench/runner.py)
 - **Distributed systems** — MassTransit state machines and transactional event storage. [Evidence](https://github.com/amasen02/freshcart-backend/blob/master/src/Services/Ordering/FreshCart.Ordering.Application/Checkout/CheckoutSagaStateMachine.cs)
 - **Data and recovery** — MongoDB event storage and projection markers in one transaction. [Evidence](https://github.com/amasen02/freshcart-backend/blob/master/src/Services/Payment/FreshCart.Payment.Infrastructure/EventStore/MongoPaymentEventStore.cs)
 - **Frontend** — Angular, TypeScript, signals, and a deliberately scoped auth boundary. [README](https://github.com/amasen02/freshcart-web/blob/master/README.md) · [Auth boundary](https://github.com/amasen02/freshcart-web/blob/master/src/app/core/http/credentials.interceptor.ts)
@@ -74,9 +78,9 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 
 ## Selected upstream merges
 
-- **[plur-ai/plur](https://github.com/plur-ai/plur/pull/1176)** — fix(core): throw RangeError on unparseable evaluation instant (#1166)
-- **[apache/lucenenet](https://github.com/apache/lucenenet/pull/1447)** — chore(xml): standardize XML declaration encoding to lowercase utf-8 (#1336)
-- **[tphakala/go-remedy](https://github.com/tphakala/go-remedy/pull/9)** — ci: pin GitHub Actions to full commit SHAs (#8)
+- **[BerriAI/litellm](https://github.com/BerriAI/litellm/pull/39729)** — Made budget resets invalidate the affected end-user spend counter and cache.
+- **[fleetdm/fleet](https://github.com/fleetdm/fleet/pull/52620)** — Prevented Windows client-certificate validity from being truncated to one year.
+- **[Arize-ai/phoenix](https://github.com/Arize-ai/phoenix/pull/15964)** — Removed a return from a finally block in playground_users.get_user to resolve a PEP 765 diagnostic.
 
 <details><summary>Full merged-PR catalog (15)</summary>
 
