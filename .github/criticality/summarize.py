@@ -195,7 +195,7 @@ def render_summary(result: dict) -> str:
         "Official v2.0.4 CSV measurement using the unchanged `original_pike` defaults and `-depsdev-disable`.",
         "",
         f"Coverage: `{result['measured_count']}/{result['expected_count']}` rows ({result['coverage']:.6%}).",
-        f"Qualification threshold: `default_score >= {result['threshold']}` (exact decimal comparison; no rounding).",
+        f"Qualification threshold: `default_score >= {result['threshold']}` (official CSV printed five-decimal value; no additional rounding). Near-threshold decisions require full-precision recalculation.",
     ]
     if result["threshold_met_urls"]:
         if result["status"] == "PASS":

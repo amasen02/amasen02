@@ -9,12 +9,13 @@ from the readiness plan even if GitHub discovery changes later.
 
 > **Known upstream limitation:** v2.0.4 can receive a GitHub `/issues` response
 > without `rel=last` for repositories with multiple issues or pull requests, then
-> wrongly treats the absent last link as a total of zero. Upstream fix
-> [#830](https://github.com/ossf/criticality_score/pull/830) is not merged. The
-> raw scores therefore may not contain fully correct issue-derived signals; this
-> audit does not claim eligibility from those scores. The workflow
-> retains an independent paginated issue diagnostic for two representative
-> repositories so this limitation remains visible in each hosted run.
+> wrongly treats the absent last link as a total of zero. See the upstream bug
+> report [#830](https://github.com/ossf/criticality_score/pull/830). The raw scores
+> therefore may not contain fully correct issue-derived signals; this audit does
+> not claim eligibility from those scores. The workflow retains an independent
+> first-page API diagnostic for two representative repositories (not a total count
+> when only a next cursor is available) so this limitation remains visible in
+> each hosted run.
 
 The workflow uses the official `original_pike` defaults and one worker with
 `-depsdev-disable`. This disables only the optional deps.dev source; it does not
@@ -32,8 +33,10 @@ CSV files are combined only when their headers match exactly, and the summarizer
 runs whenever that aggregate raw CSV exists, including after a partial collection.
 The summary requires all ten legacy inputs and a finite score in `[0, 1]` for
 every expected row. Missing or invalid values are `UNKNOWN`, never zero, and fail
-the validation gate. A score is marked `THRESHOLD_MET` using the exact comparison
-`default_score >= 0.4`; the displayed score is not rounded for that decision.
+the validation gate. A score is marked `THRESHOLD_MET` when the official CSV's
+printed five-decimal value meets the exact comparison `default_score >= 0.4`,
+without additional rounding. Near-threshold decisions require a full-precision
+recalculation from the raw signals.
 This measurement label is separate from software maintenance or any external
 qualification program.
 

@@ -203,7 +203,7 @@ jobs:
         if: always()
         run: |
           cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
-          > **Known upstream limitation:** official criticality-score v2.0.4 can receive a GitHub `/issues` response without `rel=last` for repositories with multiple issues or pull requests, then wrongly treat the absent last link as a total of zero. Upstream fix [#830](https://github.com/ossf/criticality_score/pull/830) is not merged. Raw scores may therefore lack fully correct issue-derived signals; this run makes no eligibility claim from them.
+          > **Known upstream limitation:** official criticality-score v2.0.4 can receive a GitHub `/issues` response without `rel=last` for repositories with multiple issues or pull requests, then wrongly treat the absent last link as a total of zero. See upstream bug report [#830](https://github.com/ossf/criticality_score/pull/830). Raw scores may therefore lack fully correct issue-derived signals; this run makes no eligibility claim from them.
           EOF
 
       - name: Validate and summarize results
