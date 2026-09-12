@@ -1,0 +1,230 @@
+name: OpenSSF criticality audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/criticality/**'
+      - '.github/workflows/criticality-audit.yml'
+      - 'docs/criticality-audit.md'
+      - 'tests/**'
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: criticality-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    if: github.repository == 'amasen02/amasen02'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GITHUB_AUTH_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out audit definition
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+
+      - name: Discover public non-fork repositories
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/criticality-audit"
+          gh repo list amasen02 --public --limit 1000 --json name,isFork,isPrivate,url > "$RUNNER_TEMP/criticality-audit/discovered.json"
+          python - "$RUNNER_TEMP/criticality-audit/discovered.json" "$RUNNER_TEMP/criticality-audit/targets.txt" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          discovered = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          checked = json.loads(Path(".github/criticality/targets.json").read_text(encoding="utf-8"))
+          urls = set()
+          for repo in discovered:
+              if repo["isFork"] or repo["isPrivate"]:
+                  continue
+              url = repo["url"].rstrip("/")
+              if url.startswith("https://github.com/amasen02/"):
+                  urls.add(url)
+          for name in checked["targets"]:
+              urls.add(f"https://github.com/amasen02/{name}")
+          if len(checked["targets"]) != 30:
+              raise SystemExit("checked-in target snapshot must contain exactly 30 repositories")
+          Path(sys.argv[2]).write_text("".join(f"{url}\n" for url in sorted(urls)), encoding="utf-8")
+          print(f"discovered={len(discovered)} expected={len(urls)} checked_in={len(checked['targets'])}")
+          PY
+          cp "$RUNNER_TEMP/criticality-audit/targets.txt" targets.txt
+
+      - name: Diagnose issue visibility for representative repositories
+        run: |
+          set -uo pipefail
+          audit_dir="$RUNNER_TEMP/criticality-audit"
+          diagnostic="$audit_dir/issue-api-diagnostic.json"
+          since="$(date -u -d '90 days ago' '+%Y-%m-%dT%H:%M:%SZ')"
+          captured_at="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          for repo in polyai-dotnet freshcart-backend; do
+            raw="$audit_dir/.issue-$repo.raw"
+            error_file="$audit_dir/.issue-$repo.error"
+            set +e
+            gh api --include "repos/amasen02/$repo/issues?state=all&since=$since&per_page=1" > "$raw" 2> "$error_file"
+            exit_code=$?
+            set -e
+            python .github/criticality/diagnose_issue_api.py \
+              --raw "$raw" \
+              --output "$diagnostic" \
+              --repo "$repo" \
+              --since "$since" \
+              --captured-at "$captured_at" \
+              --exit-code "$exit_code" \
+              --error-file "$error_file"
+            rm -f -- "$raw" "$error_file"
+          done
+          cat "$diagnostic"
+
+      - name: Install official criticality scorer
+        run: go install github.com/ossf/criticality_score/v2/cmd/criticality_score@v2.0.4
+
+      - name: Record tool version and provenance
+        run: |
+          set -euo pipefail
+          criticality_score -version | tee "$RUNNER_TEMP/criticality-audit/version.txt"
+          go version -m "$(command -v criticality_score)" > "$RUNNER_TEMP/criticality-audit/go-module-build-info.txt"
+          module_dir="$(go env GOPATH)/pkg/mod/github.com/ossf/criticality_score/v2@v2.0.4"
+          cp "$module_dir/internal/scorer/default_config.yml" "$RUNNER_TEMP/criticality-audit/original_pike-default_config.yml"
+          sha256sum "$RUNNER_TEMP/criticality-audit/original_pike-default_config.yml" > "$RUNNER_TEMP/criticality-audit/original_pike-default_config.sha256"
+          python - "$RUNNER_TEMP/criticality-audit/provenance.json" <<'PY'
+          import json
+          import os
+          import sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          Path(sys.argv[1]).write_text(json.dumps({
+              "measured_at_utc": datetime.now(timezone.utc).isoformat(),
+              "tool_module": "github.com/ossf/criticality_score/v2/cmd/criticality_score",
+              "tool_version": "v2.0.4",
+              "format": "csv",
+              "workers": 1,
+              "collection": "one official scorer process per repository, combined with exact header checks",
+              "inter_repository_delay_seconds": 3,
+              "depsdev": "disabled via -depsdev-disable (optional source only)",
+              "scoring_config": "official embedded original_pike.yml defaults",
+              "targets": ".github/criticality/targets.json plus public non-fork amasen02 discovery",
+              "token": "built-in Actions github.token; read-only workflow permissions",
+          }, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Test result summarizer
+        run: python -m unittest discover -s tests -v
+
+      - name: Collect official signals and scores
+        id: collect
+        run: |
+          set -uo pipefail
+          audit_dir="$RUNNER_TEMP/criticality-audit"
+          results_dir="$audit_dir/per-repository"
+          mkdir -p "$results_dir"
+          status_file="$audit_dir/collection-status.tsv"
+          : > "$status_file"
+          collection_failed=0
+          repository_number=0
+          while IFS= read -r repo || [[ -n "$repo" ]]; do
+            [[ -z "$repo" ]] && continue
+            printf -v stem 'repo-%03d' "$repository_number"
+            result_file="$results_dir/$stem.csv"
+            log_file="$results_dir/$stem.log"
+            set +e
+            criticality_score -format csv -workers 1 -depsdev-disable -out "$result_file" -force "$repo" > "$log_file" 2>&1
+            exit_code=$?
+            set -e
+            if [[ ! -s "$result_file" ]]; then
+              result_present=false
+              collection_failed=1
+            else
+              result_present=true
+            fi
+            printf '%s\t%s\t%s\t%s\t%s\n' "$repo" "$exit_code" "$result_present" "$result_file" "$log_file" >> "$status_file"
+            if (( exit_code != 0 )); then collection_failed=1; fi
+            repository_number=$((repository_number + 1))
+            sleep 3
+          done < targets.txt
+
+          set +e
+          python - "$audit_dir/raw.csv" "$results_dir" <<'PY'
+          import csv
+          import sys
+          from pathlib import Path
+
+          output = Path(sys.argv[1])
+          inputs = sorted(path for path in Path(sys.argv[2]).glob("*.csv") if path.stat().st_size)
+          if not inputs:
+              raise SystemExit("no per-repository CSV evidence was produced")
+          header = None
+          with output.open("w", newline="", encoding="utf-8") as stream:
+              writer = csv.writer(stream)
+              for path in inputs:
+                  with path.open(newline="", encoding="utf-8") as source:
+                      reader = csv.reader(source)
+                      try:
+                          current_header = next(reader)
+                      except StopIteration as exc:
+                          raise SystemExit(f"empty CSV evidence: {path}") from exc
+                      if header is None:
+                          header = current_header
+                          writer.writerow(header)
+                      elif current_header != header:
+                          raise SystemExit(f"CSV header mismatch: {path}")
+                      rows = list(reader)
+                      if len(rows) != 1 or len(rows[0]) != len(header):
+                          raise SystemExit(f"expected exactly one well-formed row: {path}")
+                      writer.writerow(rows[0])
+          print(f"combined={len(inputs)} raw={output}")
+          PY
+          combine_code=$?
+          set -e
+          if (( combine_code != 0 )); then collection_failed=1; fi
+          printf 'aggregate\t%s\t%s\n' "$collection_failed" "$repository_number" >> "$status_file"
+          exit "$collection_failed"
+
+      - name: Add known v2.0.4 limitation notice
+        if: always()
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          > **Known upstream limitation:** official criticality-score v2.0.4 can receive a GitHub `/issues` response without `rel=last` for repositories with multiple issues or pull requests, then wrongly treat the absent last link as a total of zero. See upstream bug report [#830](https://github.com/ossf/criticality_score/pull/830). Raw scores may therefore lack fully correct issue-derived signals; this run makes no eligibility claim from them.
+          EOF
+
+      - name: Validate and summarize results
+        if: always()
+        run: |
+          set -euo pipefail
+          if [[ ! -s "$RUNNER_TEMP/criticality-audit/raw.csv" ]]; then
+            echo 'No raw CSV evidence was produced; threshold results are UNKNOWN.' | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          python .github/criticality/summarize.py \
+            --csv "$RUNNER_TEMP/criticality-audit/raw.csv" \
+            --expected targets.txt \
+            --json-out "$RUNNER_TEMP/criticality-audit/summary.json" \
+            --summary-out "$RUNNER_TEMP/criticality-audit/summary.md" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: criticality-audit-${{ github.run_id }}
+          path: ${{ runner.temp }}/criticality-audit/
+          if-no-files-found: error
+          retention-days: 14

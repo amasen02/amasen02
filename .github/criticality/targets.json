@@ -1,0 +1,8 @@
+{
+  "source": "CRITICALITY-CANDIDATES.json snapshot from the 2026-09-12 readiness plan",
+  "owner": "amasen02",
+  "count": 30,
+  "targets": [
+    "freshcart-backend", "freshcart-web", "credscan", "polyai-dotnet", "mcp-breakbench", "amasen02", "fastdl", "dupesweep", "kai-csv-profiler-macos-test", "amasen02.github.io", "copilot-m3-probe", "shapes-garden", "robinhood-hook-design", "make-ten", "probability-detective", "living-ecosystem", "data-detective", "dupehunter", "credcheck", "a11y-scope", "linkedin-content-manager", "medium-blog-publisher", "diagif", "postwright", "citation-drift-lab", "jurytrace", "resumeproof", "kindrelay", "Banking-System", "AutoDrivingCarSimulation"
+  ]
+}
