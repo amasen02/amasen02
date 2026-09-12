@@ -90,9 +90,10 @@ jobs:
 
           raw_path, output_path, repo, since, captured_at, exit_code, error_path = sys.argv[1:]
           raw = Path(raw_path).read_text(encoding="utf-8", errors="replace")
-          response_status = None
-          last_page = None
-          body = ""
+            response_status = None
+            last_page = None
+            next_page_present = False
+            body = ""
           for separator in ("\r\n\r\n", "\n\n"):
               if separator in raw:
                   header_text, body = raw.split(separator, 1)
@@ -102,19 +103,25 @@ jobs:
           status_match = re.search(r"^HTTP/[^ ]+\s+(\d{3})", header_text, re.MULTILINE)
           if status_match:
               response_status = int(status_match.group(1))
-          link_match = re.search(r"[?&]page=(\d+)[^>]*>;\s*rel=\"last\"", header_text)
-          if link_match:
-              last_page = int(link_match.group(1))
-          item_count = None
-          latest_number = None
-          try:
-              items = json.loads(body)
-              if isinstance(items, list):
-                  item_count = len(items) if last_page is None else last_page
-                  if items and isinstance(items[0], dict):
-                      latest_number = items[0].get("number")
-          except json.JSONDecodeError:
-              pass
+            link_match = re.search(r"[?&]page=(\d+)[^>]*>;\s*rel=\"last\"", header_text)
+            if link_match:
+                last_page = int(link_match.group(1))
+            next_page_present = bool(re.search(r"rel=\"next\"", header_text))
+            item_count = None
+            latest_number = None
+            try:
+                items = json.loads(body)
+                if isinstance(items, list):
+                    first_page_count = len(items)
+                    total_count = last_page if last_page is not None else (None if next_page_present else first_page_count)
+                    if items and isinstance(items[0], dict):
+                        latest_number = items[0].get("number")
+            except json.JSONDecodeError:
+                first_page_count = None
+                total_count = None
+            if "first_page_count" not in locals():
+                first_page_count = None
+                total_count = None
           error = Path(error_path).read_text(encoding="utf-8", errors="replace").strip()
           entries = []
           if Path(output_path).exists():
@@ -123,11 +130,13 @@ jobs:
               "repository": f"amasen02/{repo}",
               "request": f"GET /repos/amasen02/{repo}/issues?state=all&since={since}&per_page=1",
               "captured_at_utc": captured_at,
-              "exit_code": int(exit_code),
-              "response_status": response_status,
-              "link_last_page": last_page,
-              "reported_count": item_count,
-              "latest_number": latest_number,
+                "exit_code": int(exit_code),
+                "response_status": response_status,
+                "link_last_page": last_page,
+                "link_next_present": next_page_present,
+                "first_page_count": first_page_count,
+                "total_count": total_count,
+                "latest_number": latest_number,
               "error": error[:500] if error else None,
           })
           Path(output_path).write_text(json.dumps(entries, indent=2) + "\n", encoding="utf-8")
@@ -240,6 +249,13 @@ jobs:
           if (( combine_code != 0 )); then collection_failed=1; fi
           printf 'aggregate\t%s\t%s\n' "$collection_failed" "$repository_number" >> "$status_file"
           exit "$collection_failed"
+
+      - name: Add known v2.0.4 limitation notice
+        if: always()
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          > **Known upstream limitation:** official criticality-score v2.0.4 can omit `rel=last` while paginating GitHub `/issues` for repositories with multiple issues or pull requests. Upstream fix [#830](https://github.com/ossf/criticality_score/pull/830) is not merged. Raw scores may therefore lack fully correct issue-derived signals; this run makes no eligibility claim from them.
+          EOF
 
       - name: Validate and summarize results
         if: always()

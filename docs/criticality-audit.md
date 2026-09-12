@@ -7,6 +7,14 @@ It also retains the 30-repository candidate snapshot in
 `.github/criticality/targets.json`, so the first measurement covers every target
 from the readiness plan even if GitHub discovery changes later.
 
+> **Known upstream limitation:** v2.0.4 uses GitHub `/issues` pagination in a way
+> that can omit `rel=last` for repositories with multiple issues or pull requests.
+> Upstream fix [#830](https://github.com/ossf/criticality_score/pull/830) is not
+> merged. The raw scores therefore may not contain fully correct issue-derived
+> signals; this audit does not claim eligibility from those scores. The workflow
+> retains an independent paginated issue diagnostic for two representative
+> repositories so this limitation remains visible in each hosted run.
+
 The workflow uses the official `original_pike` defaults and one worker with
 `-depsdev-disable`. This disables only the optional deps.dev source; it does not
 claim deps.dev or BigQuery coverage. The built-in Actions token is exposed to the
