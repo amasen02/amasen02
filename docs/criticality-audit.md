@@ -7,11 +7,12 @@ It also retains the 30-repository candidate snapshot in
 `.github/criticality/targets.json`, so the first measurement covers every target
 from the readiness plan even if GitHub discovery changes later.
 
-> **Known upstream limitation:** v2.0.4 uses GitHub `/issues` pagination in a way
-> that can omit `rel=last` for repositories with multiple issues or pull requests.
-> Upstream fix [#830](https://github.com/ossf/criticality_score/pull/830) is not
-> merged. The raw scores therefore may not contain fully correct issue-derived
-> signals; this audit does not claim eligibility from those scores. The workflow
+> **Known upstream limitation:** v2.0.4 can receive a GitHub `/issues` response
+> without `rel=last` for repositories with multiple issues or pull requests, then
+> wrongly treats the absent last link as a total of zero. Upstream fix
+> [#830](https://github.com/ossf/criticality_score/pull/830) is not merged. The
+> raw scores therefore may not contain fully correct issue-derived signals; this
+> audit does not claim eligibility from those scores. The workflow
 > retains an independent paginated issue diagnostic for two representative
 > repositories so this limitation remains visible in each hosted run.
 
