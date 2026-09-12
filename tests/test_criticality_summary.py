@@ -41,8 +41,8 @@ class CriticalitySummaryTests(unittest.TestCase):
             )
             result = MODULE.summarize(csv_path, expected)
             self.assertEqual(result["status"], "PASS")
-            self.assertEqual(result["qualified_urls"], ["https://github.com/amasen02/at"])
-            statuses = {record["url"]: record["qualification_status"] for record in result["records"]}
+            self.assertEqual(result["threshold_met_urls"], ["https://github.com/amasen02/at"])
+            statuses = {record["url"]: record["threshold_status"] for record in result["records"]}
             self.assertEqual(statuses["https://github.com/amasen02/below"], "BELOW_THRESHOLD")
             self.assertEqual(statuses["https://github.com/amasen02/at"], "THRESHOLD_MET")
 
@@ -56,6 +56,7 @@ class CriticalitySummaryTests(unittest.TestCase):
             result = MODULE.summarize(csv_path, expected)
             self.assertEqual(result["status"], "FAIL")
             self.assertEqual(result["records"][0]["score"], None)
+            self.assertEqual(result["records"][0]["threshold_status"], "UNKNOWN")
             self.assertEqual(result["records"][0]["qualification_status"], "UNKNOWN")
             self.assertTrue(any("missing CSV row" in error for error in result["errors"]))
 
@@ -71,6 +72,7 @@ class CriticalitySummaryTests(unittest.TestCase):
             result = MODULE.summarize(csv_path, expected)
             self.assertEqual(result["status"], "FAIL")
             self.assertEqual(result["records"][0]["score"], None)
+            self.assertEqual(result["records"][0]["threshold_status"], "UNKNOWN")
             self.assertEqual(result["records"][0]["qualification_status"], "UNKNOWN")
             self.assertTrue(any("invalid numeric signal" in error for error in result["errors"]))
 
@@ -85,8 +87,9 @@ class CriticalitySummaryTests(unittest.TestCase):
             result = MODULE.summarize(csv_path, expected)
             self.assertEqual(result["status"], "FAIL")
             self.assertEqual(result["records"][0]["score"], None)
+            self.assertEqual(result["records"][0]["threshold_status"], "UNKNOWN")
             self.assertEqual(result["records"][0]["qualification_status"], "UNKNOWN")
-            self.assertEqual(result["qualified_urls"], [])
+            self.assertEqual(result["threshold_met_urls"], [])
 
     def test_empty_expected_targets_fail(self):
         with tempfile.TemporaryDirectory() as directory:

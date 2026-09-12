@@ -159,15 +159,17 @@ def summarize(csv_path: Path, expected_path: Path) -> dict:
             "qualification_eligible": eligible,
         }
         if record["score_status"] == "UNKNOWN":
+            result["threshold_status"] = "UNKNOWN"
             result["qualification_status"] = "UNKNOWN"
-        elif not eligible:
-            result["qualification_status"] = "INELIGIBLE_PROFILE_REPOSITORY"
         else:
             score = Decimal(record["score"])
             if score >= THRESHOLD:
-                result["qualification_status"] = "THRESHOLD_MET"
-                qualified.append(url)
+                result["threshold_status"] = "THRESHOLD_MET"
+                result["qualification_status"] = "INELIGIBLE_PROFILE_REPOSITORY" if not eligible else "NOT_ASSESSED"
+                if eligible:
+                    qualified.append(url)
             else:
+                result["threshold_status"] = "BELOW_THRESHOLD"
                 result["qualification_status"] = "BELOW_THRESHOLD"
         output_records.append(result)
 
@@ -178,8 +180,8 @@ def summarize(csv_path: Path, expected_path: Path) -> dict:
         "expected_count": len(expected),
         "measured_count": measured,
         "coverage": (measured / len(expected)) if expected else 0.0,
-        "qualified_count": len(qualified),
-        "qualified_urls": qualified,
+        "threshold_met_count": len(qualified),
+        "threshold_met_urls": qualified,
         "errors": errors,
         "records": output_records,
         "status": "PASS" if not errors else "FAIL",
@@ -195,10 +197,10 @@ def render_summary(result: dict) -> str:
         f"Coverage: `{result['measured_count']}/{result['expected_count']}` rows ({result['coverage']:.6%}).",
         f"Qualification threshold: `default_score >= {result['threshold']}` (exact decimal comparison; no rounding).",
     ]
-    if result["qualified_urls"]:
+    if result["threshold_met_urls"]:
         if result["status"] == "PASS":
             lines.extend(["", "Repositories whose measured score met the threshold:", ""])
-            lines.extend(f"- `{url}`" for url in result["qualified_urls"])
+            lines.extend(f"- `{url}`" for url in result["threshold_met_urls"])
         else:
             lines.extend(["", "Threshold results withheld because validation failed; no eligibility claim is made."])
     else:
