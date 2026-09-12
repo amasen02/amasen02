@@ -1,0 +1,128 @@
+name: OpenSSF criticality audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/criticality/**'
+      - '.github/workflows/criticality-audit.yml'
+      - 'docs/criticality-audit.md'
+      - 'tests/**'
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: criticality-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    if: github.repository == 'amasen02/amasen02'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GITHUB_AUTH_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out audit definition
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+
+      - name: Discover public non-fork repositories
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/criticality-audit"
+          gh repo list amasen02 --public --limit 1000 --json name,isFork,isPrivate,url > "$RUNNER_TEMP/criticality-audit/discovered.json"
+          python - "$RUNNER_TEMP/criticality-audit/discovered.json" "$RUNNER_TEMP/criticality-audit/targets.txt" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          discovered = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          checked = json.loads(Path(".github/criticality/targets.json").read_text(encoding="utf-8"))
+          urls = set()
+          for repo in discovered:
+              if repo["isFork"] or repo["isPrivate"]:
+                  continue
+              url = repo["url"].rstrip("/")
+              if url.startswith("https://github.com/amasen02/"):
+                  urls.add(url)
+          for name in checked["targets"]:
+              urls.add(f"https://github.com/amasen02/{name}")
+          if len(checked["targets"]) != 30:
+              raise SystemExit("checked-in target snapshot must contain exactly 30 repositories")
+          Path(sys.argv[2]).write_text("".join(f"{url}\n" for url in sorted(urls)), encoding="utf-8")
+          print(f"discovered={len(discovered)} expected={len(urls)} checked_in={len(checked['targets'])}")
+          PY
+          cp "$RUNNER_TEMP/criticality-audit/targets.txt" targets.txt
+
+      - name: Install official criticality scorer
+        run: go install github.com/ossf/criticality_score/v2/cmd/criticality_score@v2.0.4
+
+      - name: Record tool version and provenance
+        run: |
+          set -euo pipefail
+          criticality_score -version | tee "$RUNNER_TEMP/criticality-audit/version.txt"
+          go version -m "$(command -v criticality_score)" > "$RUNNER_TEMP/criticality-audit/go-module-build-info.txt"
+          module_dir="$(go env GOPATH)/pkg/mod/github.com/ossf/criticality_score/v2@v2.0.4"
+          cp "$module_dir/internal/scorer/default_config.yml" "$RUNNER_TEMP/criticality-audit/original_pike-default_config.yml"
+          sha256sum "$RUNNER_TEMP/criticality-audit/original_pike-default_config.yml" > "$RUNNER_TEMP/criticality-audit/original_pike-default_config.sha256"
+          python - "$RUNNER_TEMP/criticality-audit/provenance.json" <<'PY'
+          import json
+          import os
+          import sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          Path(sys.argv[1]).write_text(json.dumps({
+              "measured_at_utc": datetime.now(timezone.utc).isoformat(),
+              "tool_module": "github.com/ossf/criticality_score/v2/cmd/criticality_score",
+              "tool_version": "v2.0.4",
+              "format": "csv",
+              "workers": 1,
+              "depsdev": "disabled via -depsdev-disable (optional source only)",
+              "scoring_config": "official embedded original_pike.yml defaults",
+              "targets": ".github/criticality/targets.json plus public non-fork amasen02 discovery",
+              "token": "built-in Actions github.token; read-only workflow permissions",
+          }, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Test result summarizer
+        run: python -m unittest discover -s tests -v
+
+      - name: Collect official signals and scores
+        id: collect
+        run: |
+          set -o pipefail
+          criticality_score -format csv -workers 1 -depsdev-disable -out "$RUNNER_TEMP/criticality-audit/raw.csv" -force targets.txt 2>&1 | tee "$RUNNER_TEMP/criticality-audit/criticality.log"
+
+      - name: Validate and summarize results
+        if: always() && steps.collect.outcome == 'success'
+        run: |
+          set -euo pipefail
+          python .github/criticality/summarize.py \
+            --csv "$RUNNER_TEMP/criticality-audit/raw.csv" \
+            --expected targets.txt \
+            --json-out "$RUNNER_TEMP/criticality-audit/summary.json" \
+            --summary-out "$RUNNER_TEMP/criticality-audit/summary.md" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: criticality-audit-${{ github.run_id }}
+          path: ${{ runner.temp }}/criticality-audit/
+          if-no-files-found: error
+          retention-days: 14
