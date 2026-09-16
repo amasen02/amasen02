@@ -72,7 +72,7 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 
 ## Open-source contributions
 
-**17 verified merged pull requests across 15 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
+**18 verified merged pull requests across 15 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
 
 **Repositories:** [apache/lucenenet](https://github.com/apache/lucenenet) · [apmantza/pi-lens](https://github.com/apmantza/pi-lens) · [Arize-ai/phoenix](https://github.com/Arize-ai/phoenix) · [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery) · [BerriAI/litellm](https://github.com/BerriAI/litellm) · [calibrain/shelfmark](https://github.com/calibrain/shelfmark) · [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch) · [fleetdm/fleet](https://github.com/fleetdm/fleet) · [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe) · [plur-ai/plur](https://github.com/plur-ai/plur) · [schubydoo/clauster](https://github.com/schubydoo/clauster) · [theagentplane/tokenops](https://github.com/theagentplane/tokenops) · [tphakala/go-remedy](https://github.com/tphakala/go-remedy) · [vllm-project/vllm](https://github.com/vllm-project/vllm) · [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)
 
@@ -82,7 +82,7 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 - **[fleetdm/fleet](https://github.com/fleetdm/fleet/pull/52620)** — Prevented Windows client-certificate validity from being truncated to one year.
 - **[Arize-ai/phoenix](https://github.com/Arize-ai/phoenix/pull/15964)** — Removed a return from a finally block in playground_users.get_user to resolve a PEP 765 diagnostic.
 
-<details><summary>Full merged-PR catalog (17)</summary>
+<details><summary>Full merged-PR catalog (18)</summary>
 
 #### [apache/lucenenet](https://github.com/apache/lucenenet)
 
@@ -123,6 +123,7 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 
 #### [plur-ai/plur](https://github.com/plur-ai/plur)
 
+- [fix(vectors): pin conformance vectors to LF with .gitattributes (#1160)](https://github.com/plur-ai/plur/pull/1177)
 - [fix(core): throw RangeError on unparseable evaluation instant (#1166)](https://github.com/plur-ai/plur/pull/1176)
 - [fix(recall): return bare operable engram IDs and enable remote forget (#1119)](https://github.com/plur-ai/plur/pull/1122)
 
