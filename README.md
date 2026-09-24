@@ -72,9 +72,9 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 
 ## Open-source contributions
 
-**19 verified merged pull requests across 16 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
+**20 verified merged pull requests across 17 repositories**. [Live GitHub search](https://github.com/search?q=author%3Aamasen02%20-user%3Aamasen02%20is%3Apr%20is%3Amerged%20is%3Apublic&amp;type=pullrequests)
 
-**Repositories:** [apache/lucenenet](https://github.com/apache/lucenenet) · [apmantza/pi-lens](https://github.com/apmantza/pi-lens) · [Arize-ai/phoenix](https://github.com/Arize-ai/phoenix) · [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery) · [BerriAI/litellm](https://github.com/BerriAI/litellm) · [calibrain/shelfmark](https://github.com/calibrain/shelfmark) · [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch) · [fleetdm/fleet](https://github.com/fleetdm/fleet) · [floci-io/floci-ui](https://github.com/floci-io/floci-ui) · [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe) · [plur-ai/plur](https://github.com/plur-ai/plur) · [schubydoo/clauster](https://github.com/schubydoo/clauster) · [theagentplane/tokenops](https://github.com/theagentplane/tokenops) · [tphakala/go-remedy](https://github.com/tphakala/go-remedy) · [vllm-project/vllm](https://github.com/vllm-project/vllm) · [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)
+**Repositories:** [apache/lucenenet](https://github.com/apache/lucenenet) · [apmantza/pi-lens](https://github.com/apmantza/pi-lens) · [Arize-ai/phoenix](https://github.com/Arize-ai/phoenix) · [atretyak1985/swarmery](https://github.com/atretyak1985/swarmery) · [BerriAI/litellm](https://github.com/BerriAI/litellm) · [calibrain/shelfmark](https://github.com/calibrain/shelfmark) · [emdash-cms/emdash](https://github.com/emdash-cms/emdash) · [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch) · [fleetdm/fleet](https://github.com/fleetdm/fleet) · [floci-io/floci-ui](https://github.com/floci-io/floci-ui) · [MihaelaAghirculesei/n8n-probe](https://github.com/MihaelaAghirculesei/n8n-probe) · [plur-ai/plur](https://github.com/plur-ai/plur) · [schubydoo/clauster](https://github.com/schubydoo/clauster) · [theagentplane/tokenops](https://github.com/theagentplane/tokenops) · [tphakala/go-remedy](https://github.com/tphakala/go-remedy) · [vllm-project/vllm](https://github.com/vllm-project/vllm) · [wemake-services/django-modern-rest](https://github.com/wemake-services/django-modern-rest)
 
 ## Selected upstream merges
 
@@ -82,7 +82,7 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 - **[fleetdm/fleet](https://github.com/fleetdm/fleet/pull/52620)** — Prevented Windows client-certificate validity from being truncated to one year.
 - **[Arize-ai/phoenix](https://github.com/Arize-ai/phoenix/pull/15964)** — Removed a return from a finally block in playground_users.get_user to resolve a PEP 765 diagnostic.
 
-<details><summary>Full merged-PR catalog (19)</summary>
+<details><summary>Full merged-PR catalog (20)</summary>
 
 #### [apache/lucenenet](https://github.com/apache/lucenenet)
 
@@ -107,6 +107,10 @@ Accessibility monitoring with Playwright and axe-core. [README](https://github.c
 #### [calibrain/shelfmark](https://github.com/calibrain/shelfmark)
 
 - [fix(postprocess): attach unmatched chaptered audio files to existing book group (#1176)](https://github.com/calibrain/shelfmark/pull/1309)
+
+#### [emdash-cms/emdash](https://github.com/emdash-cms/emdash)
+
+- [fix(core): add byline to generated collection interfaces (Fixes #2888)](https://github.com/emdash-cms/emdash/pull/2889)
 
 #### [felladrin/MiniSearch](https://github.com/felladrin/MiniSearch)
 
